@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+CU+Guides&display=swap" rel="stylesheet">
+    <title>BloomsKimono</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Bloom's Kimono</h1>
+    </div>
+
+    <div class="register-container">
+        <h1>Registre-se!</h1>
+        <p> Insira seus dados aqui!
+        </p>
+
+        <form>
+            <div class="box-input">
+                <label for="nomeUser">Nome de usuario</label>
+                <input type="text"
+                       name="nomeUser"
+                       id="nomeUser"
+                       placeholder="Insira um nome de usuario"
+                       minlength="1"
+                       maxlength="25"
+                       required />
+                       
+                    </div>
+                    <div class="box-input">
+                        <label for="emailUser"> Email </label>
+                        <input type="email"
+                               name="emailUser"
+                               id="emailUser"
+                               placeholder="Insira seu email aqui"
+                               required
+                               />
+                    </div>
+
+                    <div class="box-input">
+                        <label for="senhaUser"> Senha </label>
+                        <input type="password"
+                               name="senhaUser"
+                               id="senhaUser"
+                               placeholder="Insira sua senha aqui"
+                               required
+                            />
+                    </div>
+
+                    <input type="submit" value="Enviar" class="btn-submit"/>
+            </div>
+        </form>
+
+        <div class="flower-background">
+            <figure>
+                <img src="img/sakuraFlower.png" alt="Sakura Flowers">
+            </figure>
+        </div>
+        <div class="flower2-background">
+            <figure>
+                <img src="img/sakuraFlower2.png" alt="Sakura Flowers">
+            </figure>
+        </div>
+        <div class="flower3-background">
+            <figure>
+                <img src="img/sakuraFlower3.png" alt="Sakura Flowers">
+            </figure>
+        </div>
+    </div>
+    
+    
+    
+    <script src="js/register.js"></script>
+</div>
+</body>
+
+
+
+</html>

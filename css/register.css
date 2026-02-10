@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+    background-color: #FBEEF4;
+}
+
+.header {
+    height: 60px;
+    padding: 20px;
+    background-color: #E8B4CD;
+}
+
+
+
+.header h1{
+    color: #5C2232;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-container {
+    background-color: #FFFFFF ;
+    border-radius: 40px;
+    border: 2px #BFB5B8 solid;
+    border-bottom: 5px #999093bb solid;
+    width: 40%;
+    position: relative;
+    top: -10px;
+    margin: 0 auto;
+    height: 600px;
+
+}
+
+.register-container h1{
+    color: #5C2232;
+    font-family: "Inter", sans-serif;
+    font-weight: 20px;
+    font-style: normal;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.register-container p{
+    color: #3f0a19;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 60px;
+
+}
+
+.box-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+.box-input label{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    color: #3f0a19;
+    
+}
+
+.box-input input{
+    border: 1px #5C2232 solid;
+    border-radius: 20px;
+    padding: 12px 90px;
+    color: #e0557f;
+    border: 2px #BFB5B8 solid;
+    border-bottom: 5px #999093bb solid;
+}
+
+
+.btn-submit{
+    background-color: #e9b6d2;
+    border: 2px solid #9e6681;
+    color: #3f0a19;
+    border-radius: 100px;
+    width: 320px;
+    height: 60px;
+    text-transform: uppercase;
+
+    display: block;
+    margin: 40px auto 0;
+
+}
+
+
+.btn-submit:hover{
+  background-color: #fff;
+  border-color: #9e6681;
+  color: #9e6681;
+}  
+
+
+.flower-background{
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    z-index: -1;
+    opacity: 40%;
+
+}
+
+.flower2-background{
+    position: absolute;
+    bottom: 100px;
+    transform: rotate(40deg);
+    right: 450px;
+}
+
+
+.flower3-background{
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    z-index: -1;
+    opacity: 40%;
+    right: 20px;
+    top: 90px;
+
+}
