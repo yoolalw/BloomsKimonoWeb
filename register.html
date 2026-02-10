@@ -23,7 +23,7 @@
         <p> Insira seus dados aqui!
         </p>
 
-        <form>
+        <form id="registerForm">
             <div class="box-input">
                 <label for="nomeUser">Nome de usuario</label>
                 <input type="text"
@@ -55,7 +55,18 @@
                             />
                     </div>
 
+                    <div class="box-input">
+                        <label for="confirmarSenhaUser"> Confirmar senha </label>
+                        <input type="password"
+                               name="confirmarSenhaUser"
+                               id="confirmarSenhaUser"
+                               placeholder="Confirme sua senha"
+                               required
+                            />
+                    </div>
+
                     <input type="submit" value="Enviar" class="btn-submit"/>
+                    <p id="message"></p>
             </div>
         </form>
 
