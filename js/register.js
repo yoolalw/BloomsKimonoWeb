@@ -4,7 +4,7 @@ const message = document.getElementById('message'); //Mensagem de verificacao de
 //espera um "evento" do botao enviar || async = recebe as informações do form || (e) = event
 form.addEventListener ('submit', async (e) => {
     e.preventDefault();
-})
+
     // declara a var emailUser/senhaUser, e pega o valor atribuido a ela
     const nomeUser = document.getElementById('nomeUser').value;
     const emailUser = document.getElementById('emailUser').value;
@@ -45,3 +45,4 @@ form.addEventListener ('submit', async (e) => {
         console.error(error)
     }
 
+})
