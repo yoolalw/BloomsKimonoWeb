@@ -33,7 +33,7 @@ body {
     border-bottom: 5px #999093bb solid;
     width: 40%;
     position: relative;
-    top: -10px;
+    top: 50px;
     margin: 0 auto;
     height: 600px;
 
@@ -45,15 +45,15 @@ body {
     font-weight: 20px;
     font-style: normal;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .register-container p{
-    color: #3f0a19;
+    color: #ca7a91;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     font-size: 25px;
-    margin-top: 60px;
+    margin-top: 20px;
 
 }
 
@@ -61,7 +61,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
     
 }
 
@@ -75,7 +75,7 @@ body {
 .box-input input{
     border: 1px #5C2232 solid;
     border-radius: 20px;
-    padding: 12px 90px;
+    padding: 17px 100px;
     color: #e0557f;
     border: 2px #BFB5B8 solid;
     border-bottom: 5px #999093bb solid;
@@ -88,7 +88,7 @@ body {
     color: #3f0a19;
     border-radius: 100px;
     width: 320px;
-    height: 60px;
+    height: 65px;
     text-transform: uppercase;
 
     display: block;
@@ -113,21 +113,13 @@ body {
 
 }
 
-.flower2-background{
-    position: absolute;
-    bottom: 100px;
-    transform: rotate(40deg);
-    right: 450px;
-}
-
 
 .flower3-background{
     position: absolute;
-    bottom: 0;
     height: auto;
     z-index: -1;
     opacity: 40%;
-    right: 20px;
-    top: 90px;
+    right: 30px;
+    top: 140px;
 
 }
