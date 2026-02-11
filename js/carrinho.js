@@ -1,5 +1,11 @@
-const btn = document.getElementById("cart-button-header"); //declara o botao
+const tableCart = document.getElementById("table-cart");
+const carrinhoProdutos= JSON.parse(localStorage.getItem("carrinho")) || [];
 
-    btn.onclick = () => { //botao.evento (onclick)
-        window.open("http://127.0.0.1:5500/BloomsKimonoWeb/home.html"); //sempre que clicar no botao, vai abrir essa pag}
-}
+tableCart.innerHTML = "";
+
+carrinhoProdutos.forEach(produto => {
+    const itemDiv = document.createElement("div");
+    itemDiv.classList.add("table-cart-item"); 
+    itemDiv = `
+    `
+})
