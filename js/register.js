@@ -1,3 +1,4 @@
+
 const form = document.getElementById('registerForm'); //pega o id do form
 const message = document.getElementById('message'); //Mensagem de verificacao de registro, se foi concluido ou nao
 
@@ -17,11 +18,12 @@ form.addEventListener ('submit', async (e) => {
         return;
     }
 
+
     try{
         //fetch = comunicação direta com os servidores e api || await espera api responder antes de realizar alguma ação
         //só funciona dentro do async
 
-        const response = await fetch('http://127.0.0.1:5500/register.html',{
+        const response = await fetch('http://localhost:8081/users/register',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json' }, //informação sobre os dados
@@ -33,8 +35,13 @@ form.addEventListener ('submit', async (e) => {
         if(response.ok){
             message.innerText = 'Registro realizado com sucesso!'; //se retornar ok(200), aparecerá essa notificacao
             message.style.color = 'green';
+
+            setTimeout(() => {
+            window.location = "home.html";
+            }, 1000 );
+
         } else {
-            messagem.innerText = data.message || 'Erro ao se registrar';
+            message.innerText = data.message || 'Erro ao se registrar';
             message.style.color = 'red';
 
         }
@@ -44,5 +51,6 @@ form.addEventListener ('submit', async (e) => {
         message.style.color = 'red';
         console.error(error)
     }
+
 
 })
