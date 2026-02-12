@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/paypage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+CU+Guides&display=swap" rel="stylesheet">
+    <title>BloomsKimono</title>
+
+</head>
+
+<body>
+    
+<div class="header">
+        <h1>Bloom's Kimono</h1>
+        <p> Pagamento </p>
+</div>
+<div class="container">
+    <h1>Escolha o método de pagamento</h1>
+
+    <form method="POST">
+        <div class="form-100">
+            <label >Email:</label>
+            <input type="email">
+        </div>
+
+        <div class="form-100">
+            <label>Dados do cartão</label>
+            <input type="text" placeholder="1234 1234 1234 1234" />
+            <div class="form-50">
+                <input type="text" 
+                placeholder="12/23"
+                />
+                
+                <input type="text" 
+                placeholder="CVC" 
+                />
+            </div>
+        </div>
+
+        <div class="form-100">
+            <input type="text" 
+            placeholder="Nome do cartão" />
+        </div>
+        <div class="form-100">
+            <input type="button" 
+                    name="acao" 
+                    value="Finalizar pagamento" 
+                    class="btn-pay"
+                    />
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
