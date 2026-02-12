@@ -29,11 +29,6 @@ async function carregarProdutos() {
             };
         });
 
-            const btnHeader = document.getElementById("cart-button-header");
-            btnHeader.onclick = () =>
-            {
-               window.open("http://127.0.0.1:5500/BloomsKimonoWeb/carrinho.html"); //sempre que clicar no botao, vai abrir essa pag}
-            };
         }catch(error){
             console.error("Erro ao carregar os produtos", error);
             container.innerHTML = "<p> Erro ao carregar os produtos. </p>";
