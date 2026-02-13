@@ -6,7 +6,7 @@ let carrinho = [];
 
 async function carregarProdutos() {
     try{
-        const response = await fetch('http://localhost:8081/produtos'); //começa a puxar os dados vindo da /products
+        const response = await fetch('http://localhost:8081/products'); //começa a puxar os dados vindo da /products
         const produtos = await response.json(); 
 
         produtos.forEach(produto => {

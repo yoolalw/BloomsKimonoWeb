@@ -62,12 +62,13 @@ body{
 }
 
 .products-session{
+    margin-right: 460px; /* deixa espaço pro carrinho fixo */
     display: flex;
-    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
+    transition: margin 0.3s ease;
     
-
 }
 
 .image-content {
@@ -204,4 +205,18 @@ body{
     border-radius: 20px;
    
     
+}
+
+.image-content .cart-btn-img {
+  position: absolute;
+  bottom: 15px; /* fica no final do card */
+  right: 15px;
+  background-color: #ffffff;
+  color: #FBEEF4;
+  border: 1px solid #3f0a19;
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
