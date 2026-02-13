@@ -1,0 +1,26 @@
+body{
+    background-color: #FBEEF4;
+}
+
+
+.header { 
+    height: 60px;
+    padding: 20px;
+    background-color:#E8B4CD ;
+    border-radius: 20px;
+}
+
+.header h1 {
+    color: #3f0a19;
+    font-style: italic;
+    margin-top: 5px;
+    margin-left: 13px;
+}
+
+.header p{ 
+    text-align: center;
+    margin-top: -68px;
+    font-size: 40px;
+    color: #3f0a19
+}
+
