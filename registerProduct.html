@@ -15,5 +15,66 @@
         <p>Cadastro de produtos</p>
     </div>
 
+    <div class="register-product-container">
+        <h1>Cadastre seu produto!</h1>
+        <p>Preencha os campos abaixo.</p>
+
+        <form id="registerProductForm"enctype="multipart/form-data">
+            <div class="box-input">
+                <label for="nomeKimono">Nome do produto</label>
+                <input type="text"
+                       name="nomeKimono"
+                       id="nomeKimono"
+                       placeholder="Insira um nome!"
+                       minlength="1"
+                       maxlength="30"
+                       required />
+            </div>
+            <div class="box-input">
+                <label for="precoKimono">Preco do produto</label>
+                <input type="text"
+                       name="precoKimono"
+                       id="precoKimono"
+                       placeholder="Insira um preco para o seu produto!"
+                       minlength="1"
+                       maxlength="5"
+                       required />
+            </div>
+            <div class="box-input">
+                <label for="quantidadeKimono">Quantidade em estoque</label>
+                <input type="text"
+                       name="quantidadeKimono"
+                       id="quantidadeKimono"
+                       placeholder="Insira a quantidade inicial em estoque!"
+                       minlength="1"
+                       maxlength="25"   
+                       required />
+            </div>
+            
+            <div class="box-input-files">
+                <label for="imagem">Insira imagem do seu produto</label>
+                    <label for="imagem" class="custom-file-btn">Escolher arquivos</label>
+                        <input 
+                            type="file"
+                            multiple 
+                            accept="image/png, image/jpg, image/jpeg"
+                            id="imagem"
+                            name="imagem"
+                            required
+                            class="file-perso"
+                        />             
+
+                <p id="file-name">Nenhum arquivo escolhido</p>
+            </div>
+            
+            <input type="submit" value="Enviar" class="btn-send"/>
+
+                <div id="message"></div>
+                
+        </form> 
+<div id="listaProdutos"></div>
+
+     <script src = "js/registerProduct.js"></script>
+
 </body>
 </html>
