@@ -34,7 +34,7 @@ body{
     border-radius: 40px;
     border: 2px #BFB5B8 solid;
     border-bottom: 5px #999093bb solid;
-    width: 40%;
+    width: 35%;
     position: relative;
     top: 50px;
     margin: 0 auto;
@@ -54,7 +54,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin: 0 auto;
 }
 
 .form-100 label{
@@ -73,3 +73,65 @@ body{
     text-align: center;
 }
 
+.form-50{
+    display: flex;
+    justify-content: center; 
+    gap: -px;
+    margin: 20px 0; 
+    margin-top: -3px;
+}
+
+.form-50 input{
+    border-radius: 20px;
+    color: #e0557f;
+    border: 2px #BFB5B8 solid;
+    border-bottom: 5px #999093bb solid;
+    text-align: center;
+    width: 180px;
+    height: 50px;
+}
+
+.btn-pay{
+    margin-bottom: 20px;
+    background-color: #fae2e9;
+    cursor: pointer;
+}
+
+.payment-options {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  font-family: "Inter", sans-serif;
+  color: #3f0a19;
+}
+
+.payment-options label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+
+.payment-options input[type="radio"] {
+  appearance: none; 
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0557f;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.payment-options input[type="radio"]:checked {
+  background-color: #e0557f;
+}
+
+.payment-options .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
