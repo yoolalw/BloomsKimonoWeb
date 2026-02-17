@@ -133,5 +133,18 @@ function atualizarCarrinho(){ // quando todo item é adicionado essa funcao atua
 
 
 }
+const btnBuy = document.getElementById("btnBuy");
 
+if (btnBuy) {
+  btnBuy.addEventListener("click", () => {
+    if (carrinho.length === 0) {
+      alert("Seu carrinho está vazio!");
+      return;
+    }
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+    window.location.href = "paypage.html";
+  });
+}
 carregarProdutos(); //após toda a injeção de dados, a funcao "geral" é chamada e verifica se tudo ocorreu como desejado

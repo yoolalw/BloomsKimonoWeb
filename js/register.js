@@ -17,8 +17,6 @@ form.addEventListener ('submit', async (e) => {
         message.style.color = 'red';
         return;
     }
-
-
     try{
         //fetch = comunicação direta com os servidores e api || await espera api responder antes de realizar alguma ação
         //só funciona dentro do async
