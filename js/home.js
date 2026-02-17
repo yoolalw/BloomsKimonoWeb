@@ -4,6 +4,14 @@ const totalElement = document.querySelector(".total-price");
 
 let carrinho = [];
 
+// Tenta recuperar o carrinho salvo
+const carrinhoSalvo = localStorage.getItem("carrinho");
+if (carrinhoSalvo) {
+    carrinho = JSON.parse(carrinhoSalvo);
+    atualizarCarrinho();
+}
+
+
 async function carregarProdutos() {
     try{
         const response = await fetch('http://localhost:8081/products'); //começa a puxar os dados vindo da /products
@@ -14,7 +22,8 @@ async function carregarProdutos() {
             const div = document.createElement("div"); //cria uma class html dentro do js, para gerar automaticamente todos os produtos dentro da tela home (para nao ficar fixo, e sim de acordo com oq esta no banco de dados)
             div.classList.add("image-content"); //adiciona a lista o image-content
             div.innerHTML  = ` 
-                    <img src="${produto.imagem}" style="width:100%; height:80%; object-fit:cover; border-radius: 10px;">
+                    <img src="http://localhost:8081/products/imagem/${produto.imagem}" 
+                        style="width:100%; height:80%; object-fit:cover; border-radius: 10px;">
 
                     <h3 style="text-align:left; margin-left: 11px; font-size: 22px; margin-top: 10px;">${produto.nomeKimono}</h3>
                     
@@ -51,7 +60,7 @@ function adicionarAoCarrinho(produto){ //funcao que quando clica em um botao de 
             carrinho.push({
                 id: produto.id,
                 nomeKimono: produto.nomeKimono,
-                 precoKimono: produto.precoKimono,
+                precoKimono: produto.precoKimono,
                 imagem: produto.imagem,
                 quantidadeKimono: 1
             });
@@ -72,7 +81,7 @@ function atualizarCarrinho(){ // quando todo item é adicionado essa funcao atua
         div.classList.add("cart-box"); //adiciona aa class lista (na classe existente do html)
 
         div.innerHTML= ` 
-            <img src=" ${produto.imagem}" class="cart-img">
+            <img src="http://localhost:8081/products/imagem/${produto.imagem}" class="cart-img">
             <div class="detail-box">
                     <div class="cart-product-title">${produto.nomeKimono}</div>
                     <div class="cart-price">R$ ${produto.precoKimono.toFixed(2)}</div>
@@ -84,8 +93,45 @@ function atualizarCarrinho(){ // quando todo item é adicionado essa funcao atua
 
             cartContainer.appendChild(div); //insere os dados
 
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
     });
 
+    function removerDoCarrinho(idProduto) {
+    // filtra o array e remove o item com o id correspondente
+    carrinho = carrinho.filter(p => p.id !== idProduto);
+
+    // atualiza o carrinho na tela
+    atualizarCarrinho();
+    }
+
     totalElement.textContent = "R$ " + total.toFixed(2); //mantém o total fixo e adiciona text content nele
+
+    const botoesRemover = document.querySelectorAll(".cart-remove-item");
+    botoesRemover.forEach(botao => {
+        botao.addEventListener("click", () => {
+            const idProduto = parseInt(botao.getAttribute("data-id"));
+            removerDoCarrinho(idProduto);
+        });
+    });
+
+    // Atualiza quantidade ao alterar o input
+    const inputsQuantidade = document.querySelectorAll(".cart-quantity");
+    inputsQuantidade.forEach(input => {
+        input.addEventListener("change", (e) => {
+            const idProduto = parseInt(input.getAttribute("data-id"));
+            const novaQuantidade = parseInt(e.target.value);
+
+            const produto = carrinho.find(p => p.id === idProduto);
+            if (produto && novaQuantidade > 0) {
+                produto.quantidadeKimono = novaQuantidade;
+                atualizarCarrinho(); // atualiza total e salva no localStorage
+            }
+        });
+    });
+
+
+
 }
+
 carregarProdutos(); //após toda a injeção de dados, a funcao "geral" é chamada e verifica se tudo ocorreu como desejado
