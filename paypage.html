@@ -21,34 +21,45 @@
 <div class="container">
     <h1>Escolha o método de pagamento</h1>
 
-    <form>
+    <form id="payForm">
         <div class="form-100">
             <label >Email:</label>
-            <input type="email">
+            <input type="email"
+                   id="email">
         </div>
 
         <div class="form-100">
             <label>Dados do cartão</label>
-            <input type="text" placeholder="1234 1234 1234 1234" /> 
+            <input type="text"
+                   placeholder="1234 1234 1234 1234" 
+                   id="dadosCartao"
+                   /> 
         </div>
             <div class="form-50">
                 <input type="text" 
-                placeholder="12/23"
-                />
+                       placeholder="12/23"
+                       id="validade"
+                        />
                 
                 <input type="text" 
-                placeholder="CVC" 
-                />
+                       placeholder="CVC" 
+                       id="cvc"
+                        />
             </div>
         <div class="form-100">
             <label>Nome do cartão</label>
             <input type="text" 
-            placeholder="Nome do cartão" />
+                   placeholder="Nome do cartão" 
+                   id="nomeCartao"
+                   />
         </div>
 
         <div class="form-100">
             <label>Endereço</label>
-            <input type="text" placeholder="Ex: Rua 1, Av. 32..." /> 
+            <input type="text" 
+                   placeholder="Ex: Rua 1, Av. 32..."
+                   id="endereco" 
+                   /> 
         </div>
 
         <div class="payment-options">
@@ -73,11 +84,12 @@
                     class="btn-pay"
                     />
         </div>
-        
+        <p id="message" class="message"></p>
 
     </form>
 
 </div>
 
+    <script src="js/paypage.js"></script>
 </body>
 </html>

@@ -135,3 +135,7 @@ body{
   align-items: center;
   margin-bottom: 8px;
 }
+
+.message{
+    margin: 0 auto;
+}
