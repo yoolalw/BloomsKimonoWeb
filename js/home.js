@@ -13,43 +13,135 @@ if (carrinhoSalvo) {
 
 
 async function carregarProdutos() {
-    try{
-        const response = await fetch('http://localhost:8081/products'); //começa a puxar os dados vindo da /products
-        const produtos = await response.json(); 
+    try {
+        const response = await fetch('http://localhost:8081/products');
+        const produtos = await response.json();
+
+        container.innerHTML = "";
 
         produtos.forEach(produto => {
+            const div = document.createElement("div");
+            div.classList.add("image-content");
 
-            const div = document.createElement("div"); //cria uma class html dentro do js, para gerar automaticamente todos os produtos dentro da tela home (para nao ficar fixo, e sim de acordo com oq esta no banco de dados)
-            div.classList.add("image-content"); //adiciona a lista o image-content
-            div.innerHTML  = ` 
-                    <img src="http://localhost:8081/products/imagem/${produto.imagem}" 
-                        style="width:100%; height:80%; object-fit:cover; border-radius: 10px;">
+            // Estilo do card responsivo
+            Object.assign(div.style, {
+                flex: "1 1 calc(25% - 20px)",
+                maxWidth: "300px",
+                minWidth: "200px",
+                backgroundColor: "#D5B6C5",
+                borderRadius: "10px",
+                margin: "10px",
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+                overflow: "hidden",
+                boxSizing: "border-box",
+                height: "400px" // padroniza a altura do card
+            });
 
-                    <h3 style="text-align:left; margin-left: 11px; font-size: 22px; margin-top: 10px;">${produto.nomeKimono}</h3>
-                    
-                    <p style="text-align:left; margin-left: 11px; font-size: 22px; margin-top: 0px;">R$ ${produto.precoKimono.toFixed(2)}</p>
-
-                    <button class="cart-btn-img">🛒</button>
-                    
-
+            div.innerHTML = `
+                <div class="img-wrapper">
+                    <img src="http://localhost:8081/products/imagem/${produto.imagem}" class="product-img">
                 </div>
-            `; //inicia a funcao do html + css
-            container.appendChild(div); //"coloque essa div dentro do container no html " basicamente cria uma div nova dentro do html e fixa isso o appendChild() sempre insere dados dentro de outros
-            
-            const btnProduto = div.querySelector(".cart-btn-img");  //o div.querySelector procura dentro de uma div o ".item"
+                <h3 class="product-title">${produto.nomeKimono}</h3>
+                <p class="product-price">R$ ${produto.precoKimono.toFixed(2)}</p>
+                <button class="cart-btn-img">🛒</button>
+            `;
 
-            btnProduto.onclick = () => {
-                adicionarAoCarrinho(produto);
-             }; //adiciona ao btnProduto uma funcao que toda vez que ele for clicado a funcao de adicionarAoCarrinho(produto) seja chamada
-                
+            // Wrapper da imagem para padronizar altura
+            const imgWrapper = div.querySelector(".img-wrapper");
+            Object.assign(imgWrapper.style, {
+                width: "100%",
+                height: "80%", // ocupa 60% do card
+                overflow: "hidden",
+                borderRadius: "10px 10px 0 0"
+            });
+
+            // Imagem responsiva e padronizada
+            const img = div.querySelector(".product-img");
+            Object.assign(img.style, {
+                width: "100%",
+                height: "100%",
+                objectFit: "cover" // mantém proporção e corta o excesso
+            });
+
+            // Título
+            const title = div.querySelector(".product-title");
+            Object.assign(title.style, {
+                fontSize: "1.2rem",
+                margin: "0.5rem 1rem 0",
+                wordWrap: "break-word",
+                textAlign: "left",
+                flex: "0 0 auto"
+            });
+
+            // Preço
+            const price = div.querySelector(".product-price");
+            Object.assign(price.style, {
+                fontSize: "1.1rem",
+                margin: "0 1rem 0.5rem",
+                color: "#e670be",
+                textAlign: "left",
+                flex: "0 0 auto"
+            });
+
+            // Botão de carrinho
+            const btn = div.querySelector(".cart-btn-img");
+            Object.assign(btn.style, {
+                position: "absolute",
+                bottom: "15px",
+                right: "15px",
+                backgroundColor: "#fff",
+                border: "1px solid #3f0a19",
+                padding: "10px 14px",
+                borderRadius: "30px",
+                fontSize: "18px",
+                cursor: "pointer",
+                transition: "0.2s ease"
+            });
+
+            btn.onclick = () => adicionarAoCarrinho(produto);
+
+            container.appendChild(div);
         });
 
-        }catch(error){ //por mais que seja explicativo, ele verifica se os dados foram inseridos e depois mostra na tela com o innerHTML
-            console.error("Erro ao carregar os produtos", error);
-            container.innerHTML = "<p> Erro ao carregar os produtos. </p>";
+        // Container principal flexível
+        Object.assign(container.style, {
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "20px",
+            marginRight: "460px"
+        });
 
+        // Ajustes responsivos
+        function ajustarResponsividade() {
+            const width = window.innerWidth;
+
+            if (width <= 480) {
+                container.style.marginRight = "20px";
+                container.childNodes.forEach(card => card.style.flex = "1 1 100%");
+            } else if (width <= 768) {
+                container.style.marginRight = "100px";
+                container.childNodes.forEach(card => card.style.flex = "1 1 calc(50% - 20px)");
+            } else if (width <= 1200) {
+                container.style.marginRight = "200px";
+                container.childNodes.forEach(card => card.style.flex = "1 1 calc(33.33% - 20px)");
+            } else {
+                container.style.marginRight = "460px";
+                container.childNodes.forEach(card => card.style.flex = "1 1 calc(25% - 20px)");
+            }
         }
+
+        ajustarResponsividade();
+        window.addEventListener("resize", ajustarResponsividade);
+
+    } catch (error) {
+        console.error("Erro ao carregar os produtos", error);
+        container.innerHTML = "<p> Erro ao carregar os produtos. </p>";
     }
+}
+
 
 
 function adicionarAoCarrinho(produto){ //funcao que quando clica em um botao de carrinho, o produto é adicionado ao carrinho

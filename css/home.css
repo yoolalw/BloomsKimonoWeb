@@ -25,8 +25,8 @@ body{
 
 
 .promo-containers{
-    display: flex;
-    gap: 1px;
+    width: calc(100% - 460px); /* 440px do carrinho + 20px de espaçamento */
+    margin-right: 20px;
 }
 
 
@@ -56,9 +56,10 @@ body{
 .legend {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 40px ;
+    margin-top: 40px;
+    margin-right: 240px;
     font-size: 10px;
-    color: #4e363d
+    color: #4e363d;
 }
 
 .products-session{
@@ -227,4 +228,25 @@ body{
   font-size: 18px;
   cursor: pointer;
   transition: 0.2s ease;
+}
+
+.btn-register-product {
+    position: fixed;    
+    left: 20px;        
+    bottom: 20px;           
+    background-color: #f296ac;   
+    color: #fff;         
+    padding: 15px 25px;   
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none; 
+    border-radius: 50px;   
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000;       
+}
+
+.btn-register-product:hover {
+    background-color: #ff8ed6; /* Rosa mais claro ao passar o mouse */
+    transform: translateY(-50%) scale(1.05); /* Pequeno efeito de zoom */
 }
