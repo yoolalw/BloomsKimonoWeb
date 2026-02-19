@@ -25,7 +25,7 @@ body {
     margin-top: 10px;
 }
 
-.register-container {
+.login-container {
     background-color: #FFFFFF ;
     border-radius: 40px;    
     border: 2px #BFB5B8 solid;
@@ -34,11 +34,11 @@ body {
     position: relative;
     top: 50px;
     margin: 0 auto;
-    height: 750px;
+    height: 550px;
 
 }
 
-.register-container h1{
+.login-container h1{
     color: #5C2232;
     font-family: "Inter", sans-serif;
     font-weight: 20px;
@@ -47,7 +47,7 @@ body {
     margin-top: 30px;
 }
 
-.register-container p{
+.login-container p{
     color: #ca7a91;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
@@ -55,6 +55,7 @@ body {
     margin-top: 20px;
 
 }
+
 
 .box-input{
     display: flex;
@@ -81,7 +82,6 @@ body {
     text-align: center;
 }
 
-
 .btn-submit{
     background-color: #e9b6d2;
     border: 2px solid #9e6681;
@@ -102,35 +102,3 @@ body {
   border-color: #9e6681;
   color: #9e6681;
 }  
-
-.register-container p {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #c91447;
-}
-
-
-.flower-background{
-    position: absolute;
-    bottom: 0;
-    height: auto;
-    z-index: -1;
-    opacity: 40%;
-
-}
-
-
-.flower3-background{
-    position: absolute;
-    height: auto;
-    z-index: -1;
-    opacity: 40%;
-    right: 30px;
-    top: 140px;
-
-}
-
-.btnlogin{
-    text-align: center;
-    color: #3f0a19;
-}
