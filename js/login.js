@@ -1,4 +1,3 @@
-
 const form = document.getElementById('loginForm'); //pega o id do form
 const message = document.getElementById('message'); //Mensagem de verificacao de registro, se foi concluido ou nao
 
@@ -9,12 +8,11 @@ form.addEventListener ('submit', async (e) => {
     // declara a var emailUser/senhaUser, e pega o valor atribuido a ela
     const emailUser = document.getElementById('emailUser').value;
     const senhaUser = document.getElementById('senhaUser').value;
-    const confirmarSenhaUser = document.getElementById('confirmarSenhaUser').value;
     try{
         //fetch = comunicação direta com os servidores e api || await espera api responder antes de realizar alguma ação
         //só funciona dentro do async
 
-        const response = await fetch('http://localhost:8081/users/register',{
+        const response = await fetch('http://localhost:8081/users/login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json' }, //informação sobre os dados
@@ -24,7 +22,7 @@ form.addEventListener ('submit', async (e) => {
         const data = await response.json(); //espera a resposta vinda do json
 
         if(response.ok){
-            message.innerText = 'Registro realizado com sucesso!'; //se retornar ok(200), aparecerá essa notificacao
+            message.innerText = 'Login realizado com sucesso!'; //se retornar ok(200), aparecerá essa notificacao
             message.style.color = 'green';
 
             setTimeout(() => {
