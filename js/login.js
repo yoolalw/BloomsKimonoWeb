@@ -1,45 +1,37 @@
-const form = document.getElementById('loginForm'); //pega o id do form
-const message = document.getElementById('message'); //Mensagem de verificacao de registro, se foi concluido ou nao
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
 
-//espera um "evento" do botao enviar || async = recebe as informações do form || (e) = event
-form.addEventListener ('submit', async (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    // declara a var emailUser/senhaUser, e pega o valor atribuido a ela
-    const emailUser = document.getElementById('emailUser').value;
-    const senhaUser = document.getElementById('senhaUser').value;
-    try{
-        //fetch = comunicação direta com os servidores e api || await espera api responder antes de realizar alguma ação
-        //só funciona dentro do async
+        const emailUser = document.getElementById('emailUser').value;
+        const senhaUser = document.getElementById('senhaUser').value;
 
-        const response = await fetch('http://localhost:8081/users/login',{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' }, //informação sobre os dados
-            body: JSON.stringify({emailUser, senhaUser}) // traduz o texto js para json || resumindo o codigo caso os dois ids tenham o mesmo nome
-        });
+        try {
+            const response = await fetch('http://localhost:8081/users/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ emailUser, senhaUser })
+            });
 
-        const data = await response.json(); //espera a resposta vinda do json
+            // Use .json() porque seu backend retorna JSON
+            const data = await response.json();
 
-        if(response.ok){
-            message.innerText = 'Login realizado com sucesso!'; //se retornar ok(200), aparecerá essa notificacao
-            message.style.color = 'green';
-
-            setTimeout(() => {
-            window.location = "home.html";
-            }, 1000 );
-
-        } else {
-            message.innerText = data.message || 'Erro ao se registrar';
+            if(response.ok){
+                message.innerText = data.message;
+                message.style.color = 'green';
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 1000);
+            } else {
+                message.innerText = data.message || 'Erro ao realizar login';
+                message.style.color = 'red';
+            }
+        } catch(error) {
+            message.innerText="Erro de conexão com o servidor!";
             message.style.color = 'red';
-
+            console.error(error);
         }
-
-    } catch(error) {
-        message.innerText="Erro de conexao com o servidor!";
-        message.style.color = 'red';
-        console.error(error)
-    }
-
-
-})
+    });
+});
