@@ -109,6 +109,10 @@ body {
     color: #c91447;
 }
 
+.loginButton{
+    color: #c90064;
+}
+
 
 .flower-background{
     position: absolute;
@@ -128,9 +132,4 @@ body {
     right: 30px;
     top: 140px;
 
-}
-
-.btnlogin{
-    text-align: center;
-    color: #3f0a19;
 }
