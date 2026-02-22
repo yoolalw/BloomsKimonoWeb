@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById('loginForm');
-    const message = document.getElementById('message');
+
+
+const form = document.getElementById('loginForm');
+const message = document.getElementById('message');
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -19,11 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
 
             if(response.ok){
-                message.innerText = data.message;
+                message.innerText = "Login realizado com sucesso!";
                 message.style.color = 'green';
+                
+                
                 setTimeout(() => {
                     window.location.href = "home.html";
                 }, 1000);
+            
             } else {
                 message.innerText = data.message || 'Erro ao realizar login';
                 message.style.color = 'red';
