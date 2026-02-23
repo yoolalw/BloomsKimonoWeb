@@ -41,7 +41,7 @@ async function carregarProdutos() {
 
             div.innerHTML = `
                 <div class="img-wrapper">
-                    <img src="http://localhost:8081/products/imagem/${produto.imagem}" class="product-img">
+                    <img src="${produto.imagem}" class="product-img">
                 </div>
                 <h3 class="product-title">${produto.nomeKimono}</h3>
                 <p class="product-price">R$ ${produto.precoKimono.toFixed(2)}</p>
@@ -173,7 +173,7 @@ function atualizarCarrinho(){ // quando todo item é adicionado essa funcao atua
         div.classList.add("cart-box"); //adiciona aa class lista (na classe existente do html)
 
         div.innerHTML= ` 
-            <img src="http://localhost:8081/products/imagem/${produto.imagem}" class="cart-img">
+           <img src="${produto.imagem}" class="cart-img">
             <div class="detail-box">
                     <div class="cart-product-title">${produto.nomeKimono}</div>
                     <div class="cart-price">R$ ${produto.precoKimono.toFixed(2)}</div>
