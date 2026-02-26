@@ -19,7 +19,7 @@ form.addEventListener('submit', async (e) => {
   message.style.color = "#a33";
 
   try {
-    const response = await fetch("http://localhost:8081/products", {
+    const response = await fetch("http://localhost:8080/products", {
       method: "POST",
       body: formData
     });

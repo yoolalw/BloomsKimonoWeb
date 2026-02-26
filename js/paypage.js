@@ -14,7 +14,7 @@ form.addEventListener('submit', async (e) => {
 
 
     try{
-        const response = await fetch('http://localhost:8081/card-payments',{
+        const response = await fetch('http://localhost:8080/card-payments',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'},

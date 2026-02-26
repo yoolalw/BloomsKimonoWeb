@@ -11,7 +11,7 @@ const message = document.getElementById('message');
         const senhaUser = document.getElementById('senhaUser').value;
 
         try {
-            const response = await fetch('http://localhost:8081/users/login', {
+            const response = await fetch('http://localhost:8080/users/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ emailUser, senhaUser })

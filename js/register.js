@@ -21,7 +21,7 @@ form.addEventListener ('submit', async (e) => {
         //fetch = comunicação direta com os servidores e api || await espera api responder antes de realizar alguma ação
         //só funciona dentro do async
 
-        const response = await fetch('http://localhost:8081/users/register',{
+        const response = await fetch('http://localhost:8080/users/register',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json' }, //informação sobre os dados

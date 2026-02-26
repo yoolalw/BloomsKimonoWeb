@@ -14,7 +14,7 @@ if (carrinhoSalvo) {
 
 async function carregarProdutos() {
     try {
-        const response = await fetch('http://localhost:8081/products');
+        const response = await fetch('http://localhost:8080/products');
         const produtos = await response.json();
 
         container.innerHTML = "";
