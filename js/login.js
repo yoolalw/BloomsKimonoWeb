@@ -13,8 +13,8 @@ const message = document.getElementById('message');
         try {
             const response = await fetch('http://localhost:8080/users/login', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ emailUser, senhaUser })
+                headers: { 'Content-Type': 'application/json' },    //header sendo passado
+                body: JSON.stringify({ emailUser, senhaUser }) //body fazendo a traducao e passando quais dados serao inseridos 
             });
 
             // Use .json() porque seu backend retorna JSON
