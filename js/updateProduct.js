@@ -1,6 +1,8 @@
 const form = document.getElementById('registerProductForm');
 const message = document.getElementById('message');
 
+const produtoId = localStorage.getItem("produtoEditar");
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -9,19 +11,19 @@ form.addEventListener('submit', async (e) => {
   const quantidadeKimono = document.getElementById('quantidadeKimono').value;
   const imagem = document.getElementById('imagem').files[0];
 
-  const formData = new FormData();
-  formData.append("nomeKimono", nomeKimono);
-  formData.append("precoKimono", precoKimono);
-  formData.append("quantidadeKimono", quantidadeKimono);
-  formData.append("imagem", imagem);
+  const formData = {    
+  nomeKimono: nomeKimono,
+  precoKimono: precoKimono,
+  quantidadeKimono: quantidadeKimono,
+  imagem: imagem
 
-  message.innerText = "Enviando produto...";
-  message.style.color = "#a33";
-
+  };
   try {
-    const response = await fetch("http://localhost:8080/products", {
-      method: "POST",
-      body: formData
+    const response = await fetch(`http://localhost:8080/products/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        nomeKimono: "nomeKimono"   
+      })
     });
 
     if (response.ok) {
@@ -36,7 +38,7 @@ form.addEventListener('submit', async (e) => {
 
     } else {
       const data = await response.json();
-      message.innerText = data.message || "Erro ao cadastrar produto.";
+      message.innerText = data.message || "Erro ao atualizar produto.";
       message.style.color = "red";
     }
 

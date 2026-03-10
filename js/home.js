@@ -36,7 +36,7 @@ async function carregarProdutos() {
                 position: "relative",
                 overflow: "hidden",
                 boxSizing: "border-box",
-                height: "400px" // padroniza a altura do card
+                height: "500px" // padroniza a altura do card
             });
 
             div.innerHTML = `
@@ -45,14 +45,19 @@ async function carregarProdutos() {
                 </div>
                 <h3 class="product-title">${produto.nomeKimono}</h3>
                 <p class="product-price">R$ ${produto.precoKimono.toFixed(2)}</p>
-                <button class="cart-btn-img">🛒</button>
+
+                <button class="cart-btnCart-img">🛒</button>
+
+                <button class="edit-product-btn">Editar</button>
+                
+                <button class="remove-product-btn">Remover</button>                
             `;
 
             // Wrapper da imagem para padronizar altura
             const imgWrapper = div.querySelector(".img-wrapper");
             Object.assign(imgWrapper.style, {
                 width: "100%",
-                height: "80%", // ocupa 60% do card
+                height: "76%", 
                 overflow: "hidden",
                 borderRadius: "10px 10px 0 0"
             });
@@ -69,7 +74,7 @@ async function carregarProdutos() {
             const title = div.querySelector(".product-title");
             Object.assign(title.style, {
                 fontSize: "1.2rem",
-                margin: "0.5rem 1rem 0",
+                margin: "2px 16px 0",
                 wordWrap: "break-word",
                 textAlign: "left",
                 flex: "0 0 auto"
@@ -86,8 +91,8 @@ async function carregarProdutos() {
             });
 
             // Botão de carrinho
-            const btn = div.querySelector(".cart-btn-img");
-            Object.assign(btn.style, {
+            const btnCart = div.querySelector(".cart-btnCart-img");
+            Object.assign(btnCart.style, {
                 position: "absolute",
                 bottom: "15px",
                 right: "15px",
@@ -100,7 +105,41 @@ async function carregarProdutos() {
                 transition: "0.2s ease"
             });
 
-            btn.onclick = () => adicionarAoCarrinho(produto);
+            const editProductBtn = div.querySelector(".edit-product-btn");
+            Object.assign(editProductBtn.style, {                
+                position: "absolute",
+                bottom: "15px",
+                left: "15px",
+                backgroundColor: "#fff",
+                border: "1px solid #3f0a19",
+                padding: "10px 14px",
+                borderRadius: "30px",
+                fontSize: "18px",
+                cursor: "pointer",
+                transition: "0.2s ease"
+            });
+
+            const removeProductBtn = div.querySelector(".remove-product-btn");
+            Object.assign(removeProductBtn.style, {
+                position: "absolute",
+                bottom: "15px",
+                left: "100px",
+                backgroundColor: "#fff",
+                border: "1px solid #3f0a19",
+                padding: "10px 14px",
+                borderRadius: "30px",
+                fontSize: "18px",
+                cursor: "pointer",
+                transition: "0.2s ease"
+            });
+
+
+            btnCart.onclick = () => adicionarAoCarrinho(produto); //monta o onclick, e atribui a funcao dps passando o parametro
+
+            editProductBtn.onclick = () => editarProduto(produto);
+
+            removeProductBtn.onclick = () => removerProduto(produto);
+
 
             container.appendChild(div);
         });
@@ -140,6 +179,18 @@ async function carregarProdutos() {
         console.error("Erro ao carregar os produtos", error);
         container.innerHTML = "<p> Erro ao carregar os produtos. </p>";
     }
+}
+
+async function removerProduto(id) {
+    await fetch(`http://localhost:8080/products/${id}`, {
+        method: 'DELETE'
+    });
+    carregarProdutos();
+}
+
+function editarProduto(id){
+    localStorage.setItem("produtoEditar", id);
+    window.location.href="updateProduct.html";
 }
 
 

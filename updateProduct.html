@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/updateProduct.css" />
+    <title>BloomsKimono</title>
+
+</head>
+
+<body>
+    <div class="header">
+        <h1> Bloom's Kimono </h1>
+        <p>Atualizando produto</p>
+    </div>
+
+    <div class="update-product-container">
+        <h1> tualize seu produto!</h1>
+        <p>Preencha os campos abaixo.</p>
+
+        <form id="updateProductForm"enctype="multipart/form-data">
+            <div class="box-input">
+                <label for="nomeKimono">Novo nome do produto</label>
+                <input type="text"
+                       name="nomeKimono"
+                       id="nomeKimono"
+                       placeholder="Insira um nome!"
+                       minlength="1"
+                       maxlength="30"/>
+            </div>
+            <div class="box-input">
+                <label for="precoKimono">Novo preco do produto</label>
+                <input type="text"
+                       name="precoKimono"
+                       id="precoKimono"
+                       placeholder="Insira um preco para o seu produto!"
+                       minlength="1"
+                       maxlength="5" />
+            </div>
+            <div class="box-input">
+                <label for="quantidadeKimono">Nova quantidade em estoque</label>
+                <input type="text"
+                       name="quantidadeKimono"
+                       id="quantidadeKimono"
+                       placeholder="Insira a quantidade inicial em estoque!"
+                       minlength="1"
+                       maxlength="25"    />
+            </div>
+            
+            <div class="box-input-files">
+                <label for="imagem">Insira a nova imagem do seu produto</label>
+                    <label for="imagem" class="custom-file-btn">Escolher arquivos</label>
+                        <input 
+                            type="file"
+                            multiple 
+                            accept="image/png, image/jpg, image/jpeg"
+                            id="imagem"
+                            name="imagem"
+                            required
+                            class="file-perso"
+                        />             
+
+                <p id="file-name">Nenhum arquivo escolhido</p>
+            </div>
+            
+            <input type="submit" value="Enviar" class="btn-send"/>
+
+                <div id="message"></div>
+                
+        </form> 
+            
+        <div id="listaProdutos"></div>
+
+     <script src = "js/updateProduct.js"></script>
+
+</body>
+</html>

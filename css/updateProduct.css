@@ -1,0 +1,163 @@
+body{
+    background-color: #FBEEF4;
+}
+
+
+.header { 
+    height: 60px;
+    padding: 20px;
+    background-color:#E8B4CD ;
+    border-radius: 20px;
+}
+
+.header h1 {
+    color: #3f0a19;
+    font-style: italic;
+    margin-top: 11px;
+    margin-left: 13px;
+}
+
+.header p{ 
+    text-align: center;
+    margin-top: -62px;
+    font-size: 40px;
+    color: #3f0a19
+}
+
+.update-product-container{
+    background-color: #FFFFFF ;
+    border-radius: 40px;    
+    border: 2px #BFB5B8 solid;
+    border-bottom: 5px #999093bb solid;
+    width: 40%;
+    position: relative;
+    top: 0px;
+    margin: 0 auto;
+    height: 750px;
+}
+
+.update-product-container{
+    color: #5C2232;
+    font-family: "Inter", sans-serif;
+    font-weight: 20px;
+    font-style: normal;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.update-product-container p{
+    color: #ca7a91;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.box-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+.box-input label{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    color: #3f0a19;
+    
+}
+
+.box-input input{
+    border: 1px #5C2232 solid;
+    border-radius: 20px;
+    padding: 17px 100px;
+    color: #e0557f;
+    border: 2px #BFB5B8 solid;
+    border-bottom: 5px #999093bb solid;
+    text-align: center;
+}
+
+.btn-send{
+    background-color: #e9b6d2;
+    border: 2px solid #9e6681;
+    color: #3f0a19;
+    border-radius: 100px;
+    width: 320px;
+    height: 65px;
+    text-transform: uppercase;
+    display: block;
+    margin: 40px auto 0;
+}
+.btn-send:hover{
+  background-color: #fff;
+  border-color: #9e6681;
+  color: #9e6681;
+}
+
+.box-input-files{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.box-input-files label{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    color: #3f0a19;
+}
+
+.custom-file-btn {
+  background-color: #fff;
+  border: 2px solid #bfb5b8;
+  border-bottom: 5px solid #999093bb;
+  border-radius: 20px;
+  color: #bd768b;
+  padding: 17px 100px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-perso {
+  display: none;
+}
+
+.box-input-files p{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    color: #3f0a19;
+}
+
+#file-name {
+  margin-top: 8px;
+  color: rgb(162, 128, 139);
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+}
+
+
+.flower-background{
+    position: absolute;
+    left: -1;
+    bottom: 0;
+    height: auto;
+    z-index: -1;
+    opacity: 40%;
+
+}
+
+
+.flower3-background{
+    position: absolute;
+    height: auto;
+    z-index: -1;
+    opacity: 40%;
+    right: 30px;
+    top: 140px;
+
+}
+
