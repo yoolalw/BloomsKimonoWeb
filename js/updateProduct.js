@@ -1,4 +1,4 @@
-const form = document.getElementById('registerProductForm');
+const form = document.getElementById('updateProductForm');
 const message = document.getElementById('message');
 
 const produtoId = localStorage.getItem("produtoEditar");
@@ -19,11 +19,12 @@ form.addEventListener('submit', async (e) => {
 
   };
   try {
-    const response = await fetch(`http://localhost:8080/products/${id}`, {
-      method: "PUT",
-      body: JSON.stringify({
-        nomeKimono: "nomeKimono"   
-      })
+    const response = await fetch(`http://localhost:8080/products/${produto/Id}`, {
+        method: "PUT",
+        headers:{
+            "Content-Type":"application/json"
+        },
+      body: formData
     });
 
     if (response.ok) {

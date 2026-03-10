@@ -189,7 +189,7 @@ async function removerProduto(id) {
 }
 
 function editarProduto(id){
-    localStorage.setItem("produtoEditar", id);
+    localStorage.setItem("produtoEditar", produtoid);
     window.location.href="updateProduct.html";
 }
 
