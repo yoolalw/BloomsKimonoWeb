@@ -135,11 +135,8 @@ async function carregarProdutos() {
 
 
             btnCart.onclick = () => adicionarAoCarrinho(produto); //monta o onclick, e atribui a funcao dps passando o parametro
-
-            editProductBtn.onclick = () => editarProduto(produto);
-
+            editProductBtn.onclick = () => editarProduto(produto.id);
             removeProductBtn.onclick = () => removerProduto(produto);
-
 
             container.appendChild(div);
         });
@@ -188,12 +185,12 @@ async function removerProduto(id) {
     carregarProdutos();
 }
 
-function editarProduto(id){
-    localStorage.setItem("produtoEditar", produtoid);
+function editarProduto(id) {
+    console.log(produto.id)
+    alert(id);
+    localStorage.setItem("produtoEditar", id);
     window.location.href="updateProduct.html";
 }
-
-
 
 function adicionarAoCarrinho(produto){ //funcao que quando clica em um botao de carrinho, o produto é adicionado ao carrinho
     const produtoExistente = carrinho.find(p => p.id === produto.id); //procura se o produto existe

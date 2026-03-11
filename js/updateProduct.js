@@ -1,34 +1,36 @@
 const form = document.getElementById('updateProductForm');
 const message = document.getElementById('message');
 
-const produtoId = localStorage.getItem("produtoEditar");
+const produtoEditar = localStorage.getItem("produtoEditar");
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const nomeKimono = document.getElementById('nomeKimono').value;
-  const precoKimono = document.getElementById('precoKimono').value.replace(',', '.'); 
+  const precoKimono = document.getElementById('precoKimono').value.replace(',', '.');
   const quantidadeKimono = document.getElementById('quantidadeKimono').value;
   const imagem = document.getElementById('imagem').files[0];
 
-  const formData = {    
-  nomeKimono: nomeKimono,
-  precoKimono: precoKimono,
-  quantidadeKimono: quantidadeKimono,
-  imagem: imagem
+  const formData = new FormData();
+  formData.append("nomeKimono", nomeKimono);
+  formData.append("precoKimono", precoKimono);
+  formData.append("quantidadeKimono", quantidadeKimono);
+  formData.append("imagem", imagem);
 
-  };
+  alert(produtoEditar)
+
   try {
-    const response = await fetch(`http://localhost:8080/products/${produto/Id}`, {
-        method: "PUT",
-        headers:{
-            "Content-Type":"application/json"
-        },
+    const response = await fetch(`http://localhost:8080/products/${produtoEditar}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "multipart/form-data"
+      },
       body: formData
+
     });
 
     if (response.ok) {
-      message.innerText = "Produto cadastrado com sucesso!";
+      message.innerText = "Produto atualizado com sucesso!";
       message.style.color = "green";
 
       form.reset();
