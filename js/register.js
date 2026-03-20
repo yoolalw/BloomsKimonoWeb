@@ -8,10 +8,10 @@ form.addEventListener('submit', async function (event) {
 
     async function registerUser() {
 
-        const nomeUser = document.getElementById("#nomeUser").value;
-        const emailUser = document.getElementById("#emailUser").value;
-        const senhaUser = document.getElementById("#senhaUser").value;
-        const confSenhaUser = document.getElementById("#confSenhaUser").value;
+        const nomeUser = document.getElementById("nomeUser").value;
+        const emailUser = document.getElementById("emailUser").value;
+        const senhaUser = document.getElementById("senhaUser").value;
+        const confSenhaUser = document.getElementById("confSenhaUser").value;
 
         if(senhaUser !== confSenhaUser){
             message.innerHTML = "As senhas nao coincidem!"; 
@@ -25,7 +25,7 @@ form.addEventListener('submit', async function (event) {
 
             try{
 
-                const response = await fetch('http://localhost:8080/register', {
+                const response = await fetch('http://localhost:8080/users/register', {
                     method: 'POST',
                     headers: {
                         "Content-type": "application/json"
@@ -37,13 +37,17 @@ form.addEventListener('submit', async function (event) {
                 console.log(dataUser)
                 message.innerHTML = "Registro enviado!";
 
+                setTimeout(() => { 
+                    window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/home.html";
+                }, 2000);
+
 
             } catch (error){
                 message.innerHTML('Erro de conexão! ' + error );    
             }
 
         }   
-
-        registerUser();     
+    
     }
-})
+registerUser(); 
+});
