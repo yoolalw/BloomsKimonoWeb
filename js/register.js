@@ -1,5 +1,4 @@
 const form = document.querySelector("#registerForm");
-const btnRegister = document.getElementById("btnRegister");
 const message = document.getElementById("message");
 const formData = new FormData(form);
 
