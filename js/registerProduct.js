@@ -1,3 +1,16 @@
+import { createClient } from "https://esm.sh/@supabase/supabase-js"
+
+const supabase = createClient('https://supabase.com/dashboard/project/neyrjxcpalyrewvwyoui/storage/files/buckets/products',
+    'sb_publishable_V1-gtZmUOULjpLNML9DPzA_FhUO1dj3')
+
+
+console.log(supabase);
+
+export const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+};
+
 const message = document.getElementById("message");
 
 const registerProductForm = document.querySelector("#registerProductForm")
@@ -17,8 +30,20 @@ registerProductForm.addEventListener('submit', async function (event) {
         formData.append('quantidadeKimono', quantidadeKimono);
         formData.append('imagem', imagem);
         
+        
+
+// Create a single supabase client for interacting with your database
+        
+        try{
+        const { error } = await supabase
+            .from('imagem')
+            .insert({imagem})
+        } catch (error){
+            return error;
+        }
+
         try {
-            const reponse = await fetch('http://localhost:8080/products', {
+            const reponse = await fetch('http://localhost:8080/products/registerProd', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "multipart/form-data"
@@ -34,21 +59,8 @@ registerProductForm.addEventListener('submit', async function (event) {
                 console.log(jsonResponse);
                 message.innerHTML = "Ocorreu algum erro ao tentar cadastrar"
             }
+            createClient
 
-
-            const storage = await fetch('https://supabase.com/dashboard/project/neyrjxcpalyrewvwyoui/storage/files/buckets/products', {
-                headers: {
-                    "apikey": "sb_secret_NVx1DAHUAjAjMrpUlck1Fg_PcKTIB_Q",
-                    "Authorization": "Bearer sb_secret_NVx1DAHUAjAjMrpUlck1Fg_PcKTIB_Q"
-                },
-                method: 'POST',
-                body: formData
-            })
-            if(storage.ok){
-                const jsonStorage = storage.json();
-                console.log(jsonStorage);
-                message.innerHTML("Imagem e produto cadastrados!");
-            }
 
         } catch (error) {
             console.error(error);
