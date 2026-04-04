@@ -6,6 +6,7 @@ const formData = new FormData(registerProductForm);
 registerProductForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
+<<<<<<< HEAD
     async function registerProduct() {
         const nomeKimono = document.getElementById("nomeKimono").value;
         const precoKimono = document.getElementById("precoKimono").value;
@@ -27,6 +28,34 @@ registerProductForm.addEventListener('submit', async function (event) {
             });
             if (reponse.ok) {
                 message.innerHTML = "Conexao realizada"
+=======
+  const formData = new FormData();
+  formData.append("nomeKimono", nomeKimono);
+  formData.append("precoKimono", precoKimono);
+  formData.append("quantidadeKimono", quantidadeKimono);
+  
+  const urlImg = `produto-${Date.now()}.png`;
+
+  try{
+  const { data, error } = await supabase
+    .storage
+    .from('products')
+    .upload(urlImg, imagem)
+
+    if (error) throw error
+
+    const { data: urlData } = supabase
+    .storage
+    .from('products')
+    .getPublicUrl(urlImg)
+
+    const url = urlData.publicUrl
+
+    formData.append('imagem', url)
+  }catch(error){
+    message.innerText = "Erro inesperado: " + error
+  }
+>>>>>>> 6ee5b1188d1d0ceb1355b64d4f2d8e4f550e05d2
 
 
             } else {
@@ -35,6 +64,7 @@ registerProductForm.addEventListener('submit', async function (event) {
                 message.innerHTML = "Ocorreu algum erro ao tentar cadastrar"
             }
 
+<<<<<<< HEAD
 
             const storage = await fetch('https://supabase.com/dashboard/project/neyrjxcpalyrewvwyoui/storage/files/buckets/products', {
                 headers: {
@@ -49,6 +79,11 @@ registerProductForm.addEventListener('submit', async function (event) {
                 console.log(jsonStorage);
                 message.innerHTML("Imagem e produto cadastrados!");
             }
+=======
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1500);
+>>>>>>> 6ee5b1188d1d0ceb1355b64d4f2d8e4f550e05d2
 
         } catch (error) {
             console.error(error);
