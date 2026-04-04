@@ -13,10 +13,28 @@ form.addEventListener('submit', async (e) => {
   formData.append("nomeKimono", nomeKimono);
   formData.append("precoKimono", precoKimono);
   formData.append("quantidadeKimono", quantidadeKimono);
-  formData.append("imagem", imagem);
+  
+  const urlImg = `produto-${Date.now()}.png`;
 
-  message.innerText = "Enviando produto...";
-  message.style.color = "#a33";
+  try{
+  const { data, error } = await supabase
+    .storage
+    .from('products')
+    .upload(urlImg, imagem)
+
+    if (error) throw error
+
+    const { data: urlData } = supabase
+    .storage
+    .from('products')
+    .getPublicUrl(urlImg)
+
+    const url = urlData.publicUrl
+
+    formData.append('imagem', url)
+  }catch(error){
+    message.innerText = "Erro inesperado: " + error
+  }
 
   try {
     const response = await fetch("http://localhost:8080/products", {
@@ -27,8 +45,6 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       message.innerText = "Produto cadastrado com sucesso!";
       message.style.color = "green";
-
-      form.reset();
 
       setTimeout(() => {
         window.location.href = "home.html";
