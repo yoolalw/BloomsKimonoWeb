@@ -1,6 +1,11 @@
+const supabase = window.supabase.createClient(
+  "https://neyrjxcpalyrewvwyoui.supabase.co",
+  "sb_publishable_V1-gtZmUOULjpLNML9DPzA_FhUO1dj3"
+)
+
+console.log(supabase)
 const form = document.getElementById('registerProductForm');
 const message = document.getElementById('message');
-
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -15,35 +20,34 @@ form.addEventListener('submit', async (e) => {
   formData.append("precoKimono", precoKimono);
   formData.append("quantidadeKimono", quantidadeKimono);
   
-  const urlImg = `produto-${Date.now()}.png`;
+  async function storageImagem() {
+    const urlImg = `produto-${Date.now()}.png`;
 
- try{
-  const { data, error } = await supabase
-    .storage
-    .from('products')
-    .upload(urlImg, imagem)
+  try{
+    const { data, error } = await supabase
+      .storage
+      .from('products')
+      .upload(`public/${urlImg}`, imagem)
 
     if (error) throw error
 
     const { data: urlData } = supabase
-    .storage
-    .from('products')
-    .getPublicUrl(urlImg)
+      .storage
+      .from('products')
+      .getPublicUrl(urlImg)
 
     const url = urlData.publicUrl()
 
     formData.append('imagem', url)
 
-  }catch(error){
+  } catch(error)  {
     message.innerText = "Erro inesperado: " + error
   }
+  } storageImagem()
 
   try {
     const response = await fetch('http://localhost:8080/products/registerProd', {
         method: 'POST',
-        headers: {
-            "Content-Type": "multipart/form-data"
-        },
         body: formData
     });
 
