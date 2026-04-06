@@ -1,58 +1,80 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js"
+const supabase = window.supabase.createClient(
+  "https://neyrjxcpalyrewvwyoui.supabase.co",
+  "sb_publishable_V1-gtZmUOULjpLNML9DPzA_FhUO1dj3"
+)
 
-const supabase = createClient('https://neyrjxcpalyrewvwyoui.supabase.co',
-    'sb_publishable_V1-gtZmUOULjpLNML9DPzA_FhUO1dj3')
+console.log(supabase)
+const form = document.getElementById('registerProductForm');
+const message = document.getElementById('message');
 
-export const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-const message = document.getElementById("message");
-const registerProductForm = document.querySelector("#registerProductForm")
+  const nomeKimono = document.getElementById('nomeKimono').value;
+  const precoKimono = document.getElementById('precoKimono').value;
+  const quantidadeKimono = document.getElementById('quantidadeKimono').value;
+  const imagem = document.getElementById('imagem').files[0];
 
-registerProductForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
-    
-    const formData = new FormData(registerProductForm);
-    async function registerProduct() {
+  const formData = new FormData();
+  formData.append("nomeKimono", nomeKimono);
+  formData.append("precoKimono", precoKimono);
+  formData.append("quantidadeKimono", quantidadeKimono);
+  
+  const url = await storageImagem(imagem)
 
-        
-    const nomeKimono = document.getElementById("nomeKimono").value;
-    const precoKimono = document.getElementById("precoKimono").value;
-    const quantidadeKimono = document.getElementById("quantidadeKimono").value;
-    const imagem = document.getElementById("imagem").files[0];
+  formData.append("imagem", url)
+  
+  const json = {
+    nomeKimono: formData.get("nomeKimono"),
+    precoKimono: formData.get("precoKimono"),
+    quantidadeKimono: formData.get("quantidadeKimono"),
+    url: url.publicUrl 
+  }
+  console.log(json)
 
-    console.log(nomeKimono)
+  try {
+    const response = await fetch('http://localhost:8080/products/registerProd', {
+      method: 'POST',
+      body: json
+    });
 
-        try{
-        const { data, error } = await supabase.from('products').insert()
-        } catch (error){
-            return error;
-        }
-    
-        try {
-            const reponse = await fetch('http://localhost:8080/products/registerProd', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                },
-                body: formData
-            });
-            if (reponse.ok) {
-                message.innerHTML = "Conexao realizada"
+    if (response.ok) {
+      message.innerText = "Produto cadastrado com sucesso!";
+      message.style.color = "green";
 
-            } else {
-                const jsonResponse = reponse.json();
-                console.log(jsonResponse);
-                message.innerHTML = "Ocorreu algum erro ao tentar cadastrar"
-            }
-
-
-        } catch (error) {
-            console.error(error);
-            message.innerHTML = "Erro de conexão com servidor!";
-        }
+      //setTimeout(() => {
+      //  window.location.href = "home.html";
+      //}, 2000);
+    } else {
+      const data = await response.json();
+      message.innerText = data.message || "Erro ao cadastrar produto.";
+      message.style.color = "red";
     }
-    registerProduct();
-})
+  } catch (error) {
+    message.innerText = "Erro de conexão com servidor!";
+    message.style.color = "red";
+  }
+});
+
+/**
+ * @param img {File}
+ * @returns {string}
+ */
+async function storageImagem(imagem) {
+    const urlImg = `produto-${Date.now()}.png`;
+  
+    //faz o upload pro storage
+    const { data, error } = await supabase
+      .storage
+      .from('products')
+      .upload(`public/${urlImg}`, imagem)
+
+    if (error) throw error
+
+    const { data: urlData } = await supabase
+      .storage
+      .from('products')
+      .getPublicUrl(`public/${urlImg}`)
+
+    return urlData;
+  }
