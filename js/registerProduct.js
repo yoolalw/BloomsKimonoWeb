@@ -42,9 +42,10 @@ form.addEventListener('submit', async (e) => {
       message.innerText = "Produto cadastrado com sucesso!";
       message.style.color = "green";
 
-      //setTimeout(() => {
-      //  window.location.href = "home.html";
-      //}, 2000);
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 2000);
+      
     } else {
       const data = await response.json();
       message.innerText = data.message || "Erro ao cadastrar produto.";
