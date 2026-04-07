@@ -2,7 +2,6 @@ const supabase = window.supabase.createClient(
   "https://neyrjxcpalyrewvwyoui.supabase.co",
   "sb_publishable_V1-gtZmUOULjpLNML9DPzA_FhUO1dj3"
 )
-
 console.log(supabase)
 const form = document.getElementById('registerProductForm');
 const message = document.getElementById('message');
@@ -19,24 +18,25 @@ form.addEventListener('submit', async (e) => {
   formData.append("nomeKimono", nomeKimono);
   formData.append("precoKimono", precoKimono);
   formData.append("quantidadeKimono", quantidadeKimono);
-  
+
   const url = await storageImagem(imagem)
 
-  formData.append("imagem", url)
-  
   const json = {
     nomeKimono: formData.get("nomeKimono"),
     precoKimono: formData.get("precoKimono"),
     quantidadeKimono: formData.get("quantidadeKimono"),
-    url: url.publicUrl 
-  }
-  console.log(json)
+    imagem: url //mano
+  };
 
   try {
     const response = await fetch('http://localhost:8080/products/registerProd', {
+      headers: {
+        "Content-Type": "application/json"
+      },
       method: 'POST',
-      body: json
+      body: JSON.stringify(json)
     });
+
 
     if (response.ok) {
       message.innerText = "Produto cadastrado com sucesso!";
@@ -51,6 +51,7 @@ form.addEventListener('submit', async (e) => {
       message.style.color = "red";
     }
   } catch (error) {
+    2
     message.innerText = "Erro de conexão com servidor!";
     message.style.color = "red";
   }
@@ -61,20 +62,20 @@ form.addEventListener('submit', async (e) => {
  * @returns {string}
  */
 async function storageImagem(imagem) {
-    const urlImg = `produto-${Date.now()}.png`;
-  
-    //faz o upload pro storage
-    const { data, error } = await supabase
-      .storage
-      .from('products')
-      .upload(`public/${urlImg}`, imagem)
+  const urlImg = `produto-${Date.now()}.png`;
 
-    if (error) throw error
+  //faz o upload pro storage
+  const { data, error } = await supabase
+    .storage
+    .from('products')
+    .upload(`public/${urlImg}`, imagem)
 
-    const { data: urlData } = await supabase
-      .storage
-      .from('products')
-      .getPublicUrl(`public/${urlImg}`)
+  if (error) throw error
 
-    return urlData;
-  }
+  const { data: urlData } = await supabase
+    .storage
+    .from('products')
+    .getPublicUrl(`public/${urlImg}`)
+
+  return urlData.publicUrl;
+}
