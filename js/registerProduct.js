@@ -3,6 +3,8 @@ const supabase = window.supabase.createClient(
   "sb_publishable_V1-gtZmUOULjpLNML9DPzA_FhUO1dj3"
 )
 console.log(supabase)
+
+
 const form = document.getElementById('registerProductForm');
 const message = document.getElementById('message');
 
@@ -45,14 +47,13 @@ form.addEventListener('submit', async (e) => {
       setTimeout(() => {
         window.location.href = "home.html";
       }, 2000);
-      
+
     } else {
       const data = await response.json();
       message.innerText = data.message || "Erro ao cadastrar produto.";
       message.style.color = "red";
     }
   } catch (error) {
-    2
     message.innerText = "Erro de conexão com servidor!";
     message.style.color = "red";
   }
