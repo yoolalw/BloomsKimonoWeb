@@ -4,47 +4,36 @@ const message = document.getElementById("message")
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById("email").value
-    const dadosCartao = document.getElementById("dadosCartao").value
-    const validade = document.getElementById("validade").value
-    const cvc = document.getElementById("cvc").value
-    const nomeCartao = document.getElementById("nomeCartao").value
-    const endereco = document.getElementById("endereco").value
-    const tipoCartao = document.getElementsByName("tipoCartao")
-        .forEach(radio => {
-            if (radio.checked) {
-                return radio.value
-            }
-        })
+    const formData = new FormData(form)
 
     const dadosDoCartao = {
-        email: email,
-        dadosCartao: dadosCartao,
-        validade: validade,
-        cvc: cvc,
-        nomeCartao: nomeCartao,
-        endereco: endereco,
-        tipoCartao: tipoCartao
+        email: formData.get('email'),
+        dadosCartao: formData.get("dadosCartao"),
+        validade: formData.get("validade"),
+        cvc: formData.get("cvc"),
+        nomeCartao: formData.get("nomeCartao"),
+        endereco: formData.get("endereco"),
+        tipoCartao: formData.get("tipoCartao")
     }
+
+    console.log(dadosDoCartao)
     try {
         async function connectionFetch() {
-            try {
-                const response = await fetch('http://localhost:8080/card-payments', {
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    method: 'POST',
-                    body: JSON.stringify(dadosDoCartao)
+            const response = await fetch('http://localhost:8080/card-payments', {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                method: 'POST',
+                body: JSON.stringify(dadosDoCartao)
 
-                });
-                if (response.ok) {
-                    message.innerText = "Pagamento bem sucedido!"
+            });
+            if (response.ok) {
+                message.innerText = "Pagamento bem sucedido!"
 
-                    setTimeout(() => {
-                        window.location.href = "home.html";
-                    }, 2000)
-                }
-            } catch (error) {
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 2000)
+            } else {
                 message.innerText = "Ocorreu um erro! Tente novamente.";
                 console.log("ERRO!:   ", error);
             }

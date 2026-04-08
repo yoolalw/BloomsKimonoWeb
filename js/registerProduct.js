@@ -12,7 +12,7 @@ form.addEventListener('submit', async (e) => {
 
   const formData = new FormData(form);
 
-  const url = await storageImagem(formData.get("imagem")) 
+  const url = await storageImagem(formData.get("imagem"))
 
   const json = {
     nomeKimono: formData.get("nomeKimono"),
