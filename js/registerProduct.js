@@ -4,24 +4,15 @@ const supabase = window.supabase.createClient(
 )
 console.log(supabase)
 
-
 const form = document.getElementById('registerProductForm');
 const message = document.getElementById('message');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const nomeKimono = document.getElementById('nomeKimono').value;
-  const precoKimono = document.getElementById('precoKimono').value;
-  const quantidadeKimono = document.getElementById('quantidadeKimono').value;
-  const imagem = document.getElementById('imagem').files[0];
+  const formData = new FormData(form);
 
-  const formData = new FormData();
-  formData.append("nomeKimono", nomeKimono);
-  formData.append("precoKimono", precoKimono);
-  formData.append("quantidadeKimono", quantidadeKimono);
-
-  const url = await storageImagem(imagem)
+  const url = await storageImagem(formData.get("imagem")) 
 
   const json = {
     nomeKimono: formData.get("nomeKimono"),
