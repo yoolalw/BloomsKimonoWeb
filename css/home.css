@@ -55,13 +55,8 @@ body {
 }
 
 .productsSession {
-    margin-right: 460px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    transition: margin 0.3s ease;
-
 }
 
 .image-content {

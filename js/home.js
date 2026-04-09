@@ -1,6 +1,10 @@
-async function getProductsFromDb() {
-    const urlToFetch = "http://localhost:8080/products"
+const modal = document.getElementById("contentModal")
+const urlToFetch = "http://localhost:8080/products"
+const product = document.getElementById("produto")
+const span = document.getElementById("close")
+const prodSessInn = document.getElementById("prodSessInn")
 
+async function getProductsFromDb() {
     try {
         const response = await fetch(urlToFetch)
 
@@ -10,18 +14,19 @@ async function getProductsFromDb() {
             const dados = await response.json();
 
             console.log(dados)
-
-            const product = document.getElementById("produto")
+            
 
             dados.forEach((dataDb) => {
                 product.innerHTML += `
-                <div class="prodSessInn">
+                <div class="prodSessInn" id="prodSessInn" onclick="">
                     <img src="${dataDb.imagem}">
                     <p>${dataDb.nomeKimono}</p>
                     <h3>${dataDb.precoKimono}</h3>
                 </div>
+
                 <style scoped>
                     .prodSessInn {
+                        justify-content: center;
                         display: inline-block;
                         background-color: #4e363d;
                         width: 300px;
@@ -37,7 +42,8 @@ async function getProductsFromDb() {
 
                     }
                     .prodSessInn img {
-                        width: 300px
+                        width: 300px;
+                        border-radius: 20px;
                     }
                     
                     .prodSessInn h3 {
@@ -49,12 +55,20 @@ async function getProductsFromDb() {
 
                 </style>
                 `
-
             });
         }
-
+        prodSessInn.onclick() = function(){
+            const passId = dados
+            .find(dado =>
+                dado.id
+            )
+            localStorage.setItem('id', JSON.stringifyp(passId))
+            window.location.href = "detailsProduct.html";
+        }
+  
     } catch (err) {
         console.log(err)
     }
 
 } getProductsFromDb()
+
