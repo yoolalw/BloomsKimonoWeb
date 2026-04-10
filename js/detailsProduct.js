@@ -3,7 +3,6 @@ const id = params.get("id")
 const detalhesProduto = document.getElementById("detalhesProduto")
 console.log(id)
 
-
 const urlFindByIDToFetch = `http://localhost:8080/products/${id}`
 console.log(urlFindByIDToFetch)
 
@@ -17,12 +16,18 @@ async function getProdutDetailsById() {
             console.log(dadosId)
 
                 detalhesProduto.innerHTML = `
-                
-                <img src="${dadosId.imagem}">
-                <h1>${dadosId.nomeKimono}</h1>
-                <h2>${dadosId.precoKimono}<h2>
-                <p>Quantidade em estoque: ${dadosId.quantidadeKimono}</p>
-                <input type="submit" id="addCart" class="addCart" value="Adicionar ao carrinho">
+                <div class="itensSessInn" id="itensSessInn">
+                    
+                    <div class="imgDetails">
+                        <img src="${dadosId.imagem}">
+                    </div>
+
+                    <h1 >${dadosId.nomeKimono}</h1>
+                    <h2>${dadosId.precoKimono}</h2>
+                    <p>Quantidade em estoque: ${dadosId.quantidadeKimono}</p>
+
+                    <input type="submit" id="addCart" class="addCart" value="Adicionar ao carrinho">
+                </div>
                 `
  
 

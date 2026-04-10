@@ -1,32 +1,143 @@
-body {
-    background-color: #FBEEF4;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* BODY */
+body {
+    background-color: #FBEEF4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
 .header {
-    height: 60px;
-    padding: 20px;
+    min-height: 80px;
+    padding: 15px 20px;
     background-color: #E8B4CD;
     border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .header h1 {
     color: #3f0a19;
     font-style: italic;
-    margin-top: 10px;
-    margin-left: 13px;
+    font-size: 22px;
 }
 
 .header p {
-    text-align: center;
-    margin-top: -69px;
-    font-size: 40px;
-    color: #3f0a19
+    font-size: 28px;
+    color: #3f0a19;
+    font-weight: bold;
 }
 
-.principalContainer{
+/* CONTAINER */
+.principalContainer {
     background-color: white;
-    width: 100%;
-    height: 800px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 600px;
+    margin: 20px auto;
     border-radius: 20px;
+    padding: 20px;
+}
+
+/* LAYOUT */
+.itensSessInn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    gap: 20px 30px;
+}
+
+.imgDetails {
+    grid-row: 1 / 3;
+    width: 100%;
+    max-width: 500px;
+    height: 500px; /* TAMANHO PADRÃO */
+}
+
+.imgDetails img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* NÃO DEFORMA */
+    border-radius: 20px;
+}
+/* NOME (fica em cima) */
+.itensSessInn h1 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 32px;
+    color: #3f0a19;
+}
+
+/* BLOCO DE BAIXO (preço + qtd + botão juntos) */
+.itensSessInn h2,
+.itensSessInn p,
+.addCart {
+    grid-column: 2;
+}
+
+/* EMPURRA TUDO PRA BAIXO */
+.itensSessInn h2 {
+    align-self: end;
+    font-size: 36px;
+    color: #f57db7;
+}
+
+.itensSessInn p {
+    font-size: 18px;
+    color: #E8B4CD;
+}
+
+.addCart {
+    width: 100%;
+    max-width: 300px;
+    height: 55px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #3f0a19;
+    font-size: 18px;
+    background-color: #E8B4CD;
+    border: 1px solid #3f0a19;
+    transition: 0.3s;
+}
+
+.addCart:hover {
+    background-color: #f57db7;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .itensSessInn {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .imgDetails {
+        grid-row: auto;
+    }
+
+    .itensSessInn h1,
+    .itensSessInn h2,
+    .itensSessInn p,
+    .addCart {
+        grid-column: 1;
+        margin: 0 auto;
+    }
+
+    .header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header p {
+        font-size: 22px;
+    }
 }
