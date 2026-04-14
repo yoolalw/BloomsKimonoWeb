@@ -29,9 +29,18 @@ async function getProdutDetailsById() {
                     <input type="submit" id="addCart" class="addCart" value="Adicionar ao carrinho">
                 </div>
                 `
- 
-
         }
+        const addCart = document.getElementById("addCart");
+        addCart.addEventListener("submit", async function (e){
+            e.preventDefault();
+
+            alert("Item adicionado ao carrinho!");
+            const postItemFetch = await fetch('http://localhost:8080/cart', {
+                
+            });
+
+        })
+    
 
     } catch (error) {
         throw error
