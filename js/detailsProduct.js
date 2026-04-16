@@ -14,7 +14,6 @@ async function getProdutDetailsById() {
         if(response.ok){ 
             const dadosId = await response.json()
             console.log(dadosId)
-
                 detalhesProduto.innerHTML = `
                 <div class="itensSessInn" id="itensSessInn">
                     
@@ -30,13 +29,21 @@ async function getProdutDetailsById() {
                 </div>
                 `
         }
+
+
+
+        
         const addCart = document.getElementById("addCart");
         addCart.addEventListener("submit", async function (e){
             e.preventDefault();
 
             alert("Item adicionado ao carrinho!");
             const postItemFetch = await fetch('http://localhost:8080/cart', {
-                
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(addCart)
             });
 
         })
