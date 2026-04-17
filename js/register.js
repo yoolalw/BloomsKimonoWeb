@@ -37,7 +37,7 @@ form.addEventListener('submit', async function (event) {
                 message.innerHTML = "Registro enviado!";
 
                 setTimeout(() => {
-                    window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/home.html";
+                    window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/BloomsKimonoWeb/home.html";
                 }, 2000);
 
 
