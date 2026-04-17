@@ -1,7 +1,6 @@
 import time
 
 import pytest
-import pytest_django
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -77,3 +76,4 @@ def test_not_insert_same_password(chrome):
 
     message = chrome.find_element(By.ID, "message")
     assert message.text == "As senhas nao coincidem!"
+
