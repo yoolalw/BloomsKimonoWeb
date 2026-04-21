@@ -1,0 +1,94 @@
+body {
+    background-color: #FBEEF4;
+}
+
+.header {
+    height: 60px;
+    padding: 20px;
+    background-color: #E8B4CD;
+    border-radius: 20px;
+}
+
+.header h1 {
+    color: #3f0a19;
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 13px;
+}
+
+.header p {
+    text-align: center;
+    margin-top: -63px;
+    font-size: 40px;
+    color: #3f0a19
+}
+
+
+.cartBtn {
+    position: absolute;
+    right: 25px;
+    top: 30px;
+    background-color: #ffe1f5;
+    color: #3f0a19;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    z-index: 1000;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInn {
+    display: flex;
+    flex-direction: column; /* um item embaixo do outro */
+    gap: 15px;
+    padding: 10px;
+}
+
+.itemSessInn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* imagem */
+.itemSessInn img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* textos */
+.itemSessInn p {
+    margin: 0 10px;
+}
+
+/* botão */
+.removeBtn {
+    background-color: #ffa1ce;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.removeBtn:hover {
+    background-color: #cc0000;
+}
