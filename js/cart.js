@@ -28,7 +28,7 @@ async function getCartItens() {
 
                 const btn = cartContainer.querySelector(`[data-id="${item.idCartItem}"]`)
                 btn.addEventListener('click', async () => {
-                    const id = btn.dataset.id
+                    const id = btn.dataset.id // ??? 
 
                     try {
                         const response = await fetch(`http://localhost:8080/cart/${id}`, {
