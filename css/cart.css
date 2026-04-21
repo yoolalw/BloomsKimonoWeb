@@ -92,3 +92,17 @@ body {
 .removeBtn:hover {
     background-color: #cc0000;
 }
+
+.hrefPaypage {
+    position:absolute;
+    bottom: 50%;
+    left: 45%;
+    background-color: #ffa1ce;
+    color: #5e004e;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+
+}

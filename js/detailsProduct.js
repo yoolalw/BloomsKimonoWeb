@@ -26,6 +26,7 @@ async function getProdutDetailsById() {
                     <p>Quantidade em estoque: ${dadosId.quantidadeKimono}</p>
 
                     <button type="button" id="cartBtn" class="cartBtn">Adicionar ao carrinho</button>
+                    
                 </div>
                 `
 

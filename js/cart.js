@@ -22,6 +22,7 @@ async function getCartItens() {
                         <p>${item.total}</p>
             
                         <button type="button" data-id="${item.idCartItem}" class="removeBtn">Remover</button>
+
                     </div>
                 </div>
                 `
@@ -48,7 +49,7 @@ async function getCartItens() {
                     }
                 })
             });
-
+            
         } else {
             throw new Error("erro! ::::: ")
         }
