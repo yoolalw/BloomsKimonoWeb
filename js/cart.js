@@ -13,23 +13,45 @@ async function getCartItens() {
             console.log(JSON.stringify(cartItem))
 
             cartItem.forEach((item) => {
-                cartContainer.innerHTML += `
+                cartContainer.insertAdjacentHTML('beforeend', `
                 <div class="containerInn">
                     <div class="itemSessInn" id="itemSessInn-${item.idCartItem}">
                         <img src="${item.productModel.imagem}">
                         <p>${item.productModel.nomeKimono}</p>
                         <p>${item.productModel.precoKimono}</p>
-                        <p>${item.total}</p>
+                        
+                        <button type="button" 
+                            data-id="${item.idCartItem}" 
+                            data-quantidade-item="${item.quantidadeItem}" 
+                            id="addQuant-${item.idCartItem}"
+                            class="addQuantBtn">+
+                            </button>
+
+                        <p id="quant-${item.idCartItem}">${item.quantidadeItem}</p>
+                        
+                        <button type="button" 
+                            data-id="${item.idCartItem}" 
+                            class="removeQuantBtn">-</button>
+
+                        <p>Total: ${item.total}</p>
             
-                        <button type="button" data-id="${item.idCartItem}" class="removeBtn">Remover</button>
+                        <button type="button" 
+                            data-id="${item.idCartItem}" 
+                            class="removeBtn">Remover</button>
 
                     </div>
                 </div>
-                `
+                `)
+                // Deletando itens do carrinho!!!!
 
-                const btn = cartContainer.querySelector(`[data-id="${item.idCartItem}"]`)
-                btn.addEventListener('click', async () => {
-                    const id = btn.dataset.id // ??? 
+                const novoItem = cartContainer.lastElementChild
+                const btn = novoItem.querySelector('.removeBtn')
+                const addQuantBtn = novoItem.querySelector('.addQuantBtn')
+                const removeQuantBtn = novoItem.querySelector('.removeQuantBtn')
+
+                btn.addEventListener('click', async (e) => {
+                    e.preventDefault()
+                    const id = btn.dataset.id
 
                     try {
                         const response = await fetch(`http://localhost:8080/cart/${id}`, {
@@ -48,8 +70,40 @@ async function getCartItens() {
                         console.log("ERROR!! ::", error)
                     }
                 })
+                //Atualizando quantidade de produtos do carrinho!!!!
+
+                addQuantBtn.addEventListener('click', async (e) => {
+                    e.preventDefault()
+
+                    const quantidadeAtual = Number(addQuantBtn.dataset.quantidadeItem)
+                    const quantNova = quantidadeAtual + 1
+                    const id = addQuantBtn.dataset.id
+
+                    try {
+
+                        const response = await fetch(`http://localhost:8080/cart/${id}`, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ quantidadeItem: quantNova })
+                        })
+
+                        if (response.ok) {
+
+                            document.getElementById(`quant-${id}`).textContent = quantNova
+                            addQuantBtn.dataset.quantidadeItem = quantNova
+
+                        } else {
+                            console.error("Erro de requisicao")
+                        }
+
+
+                    } catch (error) {
+                        console.error(error)
+                    }
+                });
             });
-            
         } else {
             throw new Error("erro! ::::: ")
         }
