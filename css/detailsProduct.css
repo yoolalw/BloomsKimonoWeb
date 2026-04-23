@@ -24,7 +24,7 @@ body {
     flex-wrap: wrap;
 }
 
-.header h1 {
+.header .h1 {
     color: #3f0a19;
     font-style: italic;
     font-size: 22px;
