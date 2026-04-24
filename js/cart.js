@@ -39,7 +39,7 @@ async function getCartItens() {
                             class="removeQuantBtn">-</button>
 
                         <p class="total"
-                            id="total"
+                            id="total-${item.idCartItem}"
                             >Total: ${item.total}</p>
             
                         <button type="button" 
@@ -48,6 +48,7 @@ async function getCartItens() {
 
                     </div>
                 </div>
+               
                 `)
 
                 const novoItem = cartContainer.lastElementChild
@@ -55,6 +56,7 @@ async function getCartItens() {
                 const addQuantBtn = novoItem.querySelector('.addQuantBtn')
                 const removeQuantBtn = novoItem.querySelector('.removeQuantBtn')
                 const total = novoItem.querySelector(".total")
+                const valorItem = Number(addQuantBtn.dataset.valorItem)
 
                 btn.addEventListener('click', async (e) => {
                     e.preventDefault()
@@ -106,6 +108,9 @@ async function getCartItens() {
                             document.getElementById(`quant-${id}`).textContent = quantNova
                             addQuantBtn.dataset.quantidadeItem = quantNova
 
+                            document.getElementById(`total-${id}`).textContent = "Total: " + calcValue
+                            addQuantBtn.dataset.total = calcValue
+
                         } else {
                             console.error("Erro de requisicao")
                         }
@@ -117,17 +122,17 @@ async function getCartItens() {
                 });
                 //Finaliza funcao de adicionar mais quantidade
 
+                //funcao de remover quantidade
                 removeQuantBtn.addEventListener('click', async (e) => {
                     e.preventDefault()
 
                     const quantidadeAtual = Number(addQuantBtn.dataset.quantidadeItem)
-                    const valorItem = Number(addQuantBtn.dataset.quantidadeItem)
                     const quantRemov = quantidadeAtual - 1
                     const calcValue = valorItem * quantRemov
                     const id = removeQuantBtn.dataset.id
 
                     removeQuantBtn.disabled = (quantidadeAtual == 1);
-                    if(quantidadeAtual > 1) { 
+                    if (quantidadeAtual > 1) {
                         removeQuantBtn.disabled = false
                     }
 
@@ -144,8 +149,9 @@ async function getCartItens() {
                         if (response.ok) {
                             document.getElementById(`quant-${id}`).textContent = quantRemov
                             addQuantBtn.dataset.quantidadeItem = quantRemov
-                            
-                           
+                            document.getElementById(`total-${id}`).textContent = "Total: " + calcValue
+                            addQuantBtn.dataset.total = calcValue
+
                         }
 
                     } catch (error) {
@@ -153,9 +159,9 @@ async function getCartItens() {
                     }
                 })
 
-             
+                const TotalSumCart = cartItem.reduce((soma, cartItem) => soma + cartItem.total, 0)
+                document.getElementById("totalCartItens").textContent = "Total: " + TotalSumCart
                 
-
             });
         } else {
             throw new Error("erro! ::::: ")
