@@ -15,9 +15,10 @@ async function getProductsFromDb() {
             dados.forEach((dataDb) => {
                 produto.insertAdjacentHTML('beforeend', `
                 <a href="detailsProduct.html?id=${dataDb.id}">
-                <div class="prodSessInn" id="prodSessInn-${dataDb.id}">
-                    <img src="${dataDb.imagem}">
-                    </a>
+                    <div class="prodSessInn" id="prodSessInn-${dataDb.id}">
+                        <img src="${dataDb.imagem}">
+                </a>
+
                     <p>${dataDb.nomeKimono}</p>
                     <h3>${dataDb.precoKimono}</h3>
 
@@ -27,12 +28,13 @@ async function getProductsFromDb() {
                         >Deletar
                     </button>
 
-                    
-                    <button type="button"
-                        data-id="${dataDb.id}"
-                        class="updatePagProd"
-                        >Editar
-                    </button>
+                    <a href="updateProduct.html?id=${dataDb.id}">
+                        <button type="button"
+                            data-id="${dataDb.id}"
+                            class="updatePagProd"
+                            >Editar
+                        </button>
+                    </a>
 
                 </div>  
                 `)
@@ -60,17 +62,14 @@ async function getProductsFromDb() {
                             document.getElementById(`prodSessInn-${dataDb.id}`).remove()
 
                         } else {
-                            throw new Error();
+                           console.error()
                         }
                     } catch (err) {
-                        throw new Error('error::: ', err)
+                        console.log(err)
                     }
                 });
 
-                //redirecionamento de pagina - update product
-                upgradePagProd.addEventListener("click", async (e) => {
-                    window.location.href = "updateProduct.html"
-                })
+                
 
             });
 

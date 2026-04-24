@@ -100,7 +100,7 @@ async function getCartItens() {
                             headers: {
                                 "Content-Type": "application/json"
                             },
-                            body: JSON.stringify({ quantidadeItem: quantNova, total: calcValue })
+                            body: JSON.stringify({ quantidadeItem: quantNova, total: calcValue.toFixed(2) })
                         })
 
                         if (response.ok) {
@@ -108,13 +108,15 @@ async function getCartItens() {
                             document.getElementById(`quant-${id}`).textContent = quantNova
                             addQuantBtn.dataset.quantidadeItem = quantNova
 
-                            document.getElementById(`total-${id}`).textContent = "Total: " + calcValue
-                            addQuantBtn.dataset.total = calcValue
+                            document.getElementById(`total-${id}`).textContent = "Total: " + calcValue.toFixed(2)
+                            addQuantBtn.dataset.total = calcValue.toFixed(2)
 
                         } else {
                             console.error("Erro de requisicao")
                         }
 
+                        const totalSumCart = cartItem.reduce((soma, cartItem) => soma + cartItem.total)
+                        document.getElementById("totalCartItens").textContent = "Total: " + calcValue.toFixed(2)
 
                     } catch (error) {
                         console.error(error)
@@ -143,25 +145,28 @@ async function getCartItens() {
                             headers: {
                                 "Content-Type": "application/json"
                             },
-                            body: JSON.stringify({ quantidadeItem: quantRemov, total: calcValue })
+                            body: JSON.stringify({
+                                quantidadeItem: quantRemov,
+                                total: calcValue.toFixed(2)
+                            })
                         })
 
                         if (response.ok) {
                             document.getElementById(`quant-${id}`).textContent = quantRemov
                             addQuantBtn.dataset.quantidadeItem = quantRemov
-                            document.getElementById(`total-${id}`).textContent = "Total: " + calcValue
-                            addQuantBtn.dataset.total = calcValue
-
+                            
+                            document.getElementById(`total-${id}`).textContent = "Total: " + calcValue.toFixed(2)
+                            addQuantBtn.dataset.total = calcValue.toFixed(2)
                         }
 
+                        const totalSumCart = cartItem.reduce((soma, cartItem) => soma + cartItem.total, 0)
+                        document.getElementById("totalCartItens").textContent = "Total: " + calcValue.toFixed(2)
                     } catch (error) {
                         throw new Error(error)
                     }
                 })
 
-                const TotalSumCart = cartItem.reduce((soma, cartItem) => soma + cartItem.total, 0)
-                document.getElementById("totalCartItens").textContent = "Total: " + TotalSumCart
-                
+
             });
         } else {
             throw new Error("erro! ::::: ")

@@ -19,7 +19,7 @@
         <h1> Atualize seu produto!</h1>
         <p>Preencha os campos abaixo.</p>
 
-        <form id="updateProductForm"enctype="multipart/form-data">
+        <form id="updateProductForm">
             <div class="box-input">
                 <label for="nomeKimono">Novo nome do produto</label>
                 <input type="text"
@@ -47,23 +47,8 @@
                        minlength="1"
                        maxlength="25"    />
             </div>
-            
-            <div class="box-input-files">
-                <label for="imagem">Insira a nova imagem do seu produto</label>
-                    <label for="imagem" class="custom-file-btn">Escolher arquivos</label>
-                        <input 
-                            type="file"
-                            multiple 
-                            accept="image/png, image/jpg, image/jpeg"
-                            id="imagem"
-                            name="imagem"   
-                            class="file-perso"
-                        />             
-
-                <p id="file-name">Nenhum arquivo escolhido</p>
-            </div>
-            
-            <input type="submit" value="Enviar" class="btn-send"/>
+           
+            <input type="submit" id="submitUpdate" value="Enviar" class="btn-send"/>
 
                 <div id="message"></div>
                 
