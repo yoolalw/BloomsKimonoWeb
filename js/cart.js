@@ -75,6 +75,8 @@ async function getCartItens() {
                             throw new Error("erro! ::::: ")
                         }
 
+
+
                     } catch (error) {
                         console.log("ERROR!! ::", error)
                     }
@@ -115,8 +117,9 @@ async function getCartItens() {
                             console.error("Erro de requisicao")
                         }
 
-                        const totalSumCart = cartItem.reduce((soma, cartItem) => soma + cartItem.total)
-                        document.getElementById("totalCartItens").textContent = "Total: " + calcValue.toFixed(2)
+                        const sum =+ calcValue
+                        console.log(sum)
+                        document.getElementById("totalCartItens").textContent = "Total: " + sum.toFixed(2)
 
                     } catch (error) {
                         console.error(error)
@@ -154,13 +157,11 @@ async function getCartItens() {
                         if (response.ok) {
                             document.getElementById(`quant-${id}`).textContent = quantRemov
                             addQuantBtn.dataset.quantidadeItem = quantRemov
-                            
+
                             document.getElementById(`total-${id}`).textContent = "Total: " + calcValue.toFixed(2)
                             addQuantBtn.dataset.total = calcValue.toFixed(2)
                         }
 
-                        const totalSumCart = cartItem.reduce((soma, cartItem) => soma + cartItem.total, 0)
-                        document.getElementById("totalCartItens").textContent = "Total: " + calcValue.toFixed(2)
                     } catch (error) {
                         throw new Error(error)
                     }
