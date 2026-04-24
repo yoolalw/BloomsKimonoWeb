@@ -18,9 +18,18 @@ body {
 
 .header p {
     text-align: center;
-    margin-top: -69px;
+    margin-top: -65px;
     font-size: 40px;
     color: #3f0a19
+}
+
+.header h3 {
+    color: #3f0a19;
+    font-style: italic;
+    position: relative;
+    text-align: center;
+    top: -30px;
+    right: 300px;
 }
 
 .promo-container {
@@ -61,6 +70,8 @@ body {
 
 .image-content {
     width: 300px;
+    max-width: 300px;
+    min-width: 300px;
     height: 570px;
     background-color: #D5B6C5;
     margin-top: 30px;
@@ -136,29 +147,66 @@ body {
 }
 
 .prodSessInn {
-                        justify-content: center;
-                        display: inline-block;
-                        background-color: #4e363d;
-                        width: 300px;
-                        margin-top: 20px;
-                        border-radius: 20px;
-                        cursor: pointer;
-                    }
-                    .prodSessInn p{
-                        color: #fce7f1;
-                        font-size: 25px;
-                        margin-left: 10px;
-                        margin-top: 2px;
+    justify-content: center;
+    display: inline-block;
+    background-color: #4e363d;
+    max-width: 300px;
+    width: 300px;
+    max-height: 500px;
+    margin-top: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
 
-                    }
-                    .prodSessInn img {
-                        width: 300px;
-                        border-radius: 20px;
-                    }
-                    
-                    .prodSessInn h3 {
-                        position: flex;
-                        font-size: 35px;
-                        color: white;
-                        margin-left: 20px;
-                    }
+.prodSessInn p {
+    color: #fce7f1;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 2px;
+
+}
+
+.prodSessInn img {
+    width: 300px;
+    height: 300px; /* importante usar height fixa */
+
+    border-radius: 20px;
+
+    object-fit: cover; /* faz o corte automático */
+    object-position: center top; /* foca mais na parte de cima */
+}
+
+.prodSessInn h3 {
+    position: flex;
+    font-size: 35px;
+    color: white;
+    margin-left: 20px;
+}
+
+.removeProd{
+    right: 25px;
+    top: 30px;
+    background-color: #ffe1f5;
+    color: #3f0a19;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.updatePagProd{
+    right: 25px;
+    top: 30px;
+    background-color: #ffe1f5;
+    color: #3f0a19;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    z-index: 1000;
+    cursor: pointer;       
+}
