@@ -9,6 +9,10 @@ body {
     border-radius: 20px;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header h1 {
     color: #3f0a19;
     font-style: italic;

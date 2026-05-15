@@ -11,7 +11,9 @@
 
 <body>
     <div class="header">
-        <h1> Bloom's Kimono </h1>
+        <a href="home.html">
+            <h1> Bloom's Kimono </h1>
+        </a>
         <p>Atualizando produto</p>
     </div>
 
@@ -22,41 +24,30 @@
         <form id="updateProductForm">
             <div class="box-input">
                 <label for="nomeKimono">Novo nome do produto</label>
-                <input type="text"
-                       name="nomeKimono"
-                       id="nomeKimono"
-                       placeholder="Insira um nome!"
-                       minlength="1"
-                       maxlength="30"/>
+                <input type="text" name="nomeKimono" id="nomeKimono" placeholder="Insira um nome!" minlength="1"
+                    maxlength="30" />
             </div>
             <div class="box-input">
                 <label for="precoKimono">Novo preco do produto</label>
-                <input type="text"
-                       name="precoKimono"
-                       id="precoKimono"
-                       placeholder="Insira um preco para o seu produto!"
-                       minlength="1"
-                       maxlength="5" />
+                <input type="text" name="precoKimono" id="precoKimono" placeholder="Insira um preco para o seu produto!"
+                    minlength="1" maxlength="5" />
             </div>
             <div class="box-input">
                 <label for="quantidadeKimono">Nova quantidade em estoque</label>
-                <input type="text"
-                       name="quantidadeKimono"
-                       id="quantidadeKimono"
-                       placeholder="Insira a quantidade inicial em estoque!"
-                       minlength="1"
-                       maxlength="25"    />
+                <input type="text" name="quantidadeKimono" id="quantidadeKimono"
+                    placeholder="Insira a quantidade inicial em estoque!" minlength="1" maxlength="25" />
             </div>
-           
-            <input type="submit" id="submitUpdate" value="Enviar" class="btn-send"/>
 
-                <div id="message"></div>
-                
-        </form> 
-            
+            <input type="submit" id="submitUpdate" value="Enviar" class="btn-send" />
+
+            <div id="message"></div>
+
+        </form>
+
         <div id="listaProdutos"></div>
 
-     <script src = "js/updateProduct.js"></script>
+        <script src="js/updateProduct.js"></script>
 
 </body>
+
 </html>

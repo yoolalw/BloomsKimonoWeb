@@ -16,6 +16,10 @@ body{
     margin-left: 13px;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header p{ 
     text-align: center;
     margin-top: -60px;
