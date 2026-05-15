@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d6cd06-648e-4935-9328-eeb381b9917d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/tests/test_register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_register_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.32098.74" />
         <option value="bundled-python-sdk-1cd77e80b48f-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.32098.74" />
       </set>
     </attachedChunks>
@@ -75,6 +74,8 @@
       <updated>1776424377461</updated>
       <workItem from="1776424386075" duration="16065000" />
       <workItem from="1776446667085" duration="11000" />
+      <workItem from="1778153603171" duration="57000" />
+      <workItem from="1778504268673" duration="32000" />
     </task>
     <servers />
   </component>
