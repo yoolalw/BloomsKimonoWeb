@@ -21,32 +21,38 @@ form.addEventListener('submit', async function (event) {
                 emailUser: emailUser,
                 senhaUser: senhaUser
             }
+            if (mensagemErro()) {
+                mensagemErro()
+            } else {
+                try {
+                    const response = await fetch('http://localhost:8080/users/register', {
+                        method: 'POST',
+                        headers: {
+                            "Content-type": "application/json"
+                        },
+                        body: JSON.stringify(newUser)
+                    })
 
-            try {
+                    const dataUser = response.json();
+                    console.log(dataUser)
+                    message.innerHTML = "Registro enviado!";
 
-                const response = await fetch('http://localhost:8080/users/register', {
-                    method: 'POST',
-                    headers: {
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify(newUser)
-                })
+                    setTimeout(() => {
+                        window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/BloomsKimonoWeb/home.html";
+                    }, 2000);
+                } catch (error) {
+                    message.innerHTML('Erro de conexão! ' + error);
+                }
 
-                const dataUser = response.json();
-                console.log(dataUser)
-                message.innerHTML = "Registro enviado!";
-
-                setTimeout(() => {
-                    window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/BloomsKimonoWeb/home.html";
-                }, 2000);
-
-
-            } catch (error) {
-                message.innerHTML('Erro de conexão! ' + error);
             }
-
         }
 
     }
     registerUser();
 });
+
+function mensagemErro() {
+    if (nomeUser || emailUser || senhaUser == "") {
+        return message.innerHTML = "Ocorreu um erro! Preencha todos os campos!"
+    }
+}
