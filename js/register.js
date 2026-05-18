@@ -4,6 +4,7 @@ const formData = new FormData(form);
 
 form.addEventListener('submit', async function (event) {
     event.preventDefault();
+    await registerUser();
 
     async function registerUser() {
 
@@ -16,40 +17,41 @@ form.addEventListener('submit', async function (event) {
             message.innerHTML = "As senhas nao coincidem!";
         } else {
 
+            if (msgError()) return
+            const isEmailTaken = await verifyEmail(emailUser)
+
+            if (isEmailTaken) {
+                message.innerHTML = "email ja usado"
+                return
+            }
             const newUser = {
                 nomeUser: nomeUser,
                 emailUser: emailUser,
                 senhaUser: senhaUser
             }
 
-            if (msgError()) {
-                return msgError()
-            } else {
-                try {
-                    const response = await fetch('http://localhost:8080/users/register', {
-                        method: 'POST',
-                        headers: {
-                            "Content-type": "application/json"
-                        },
-                        body: JSON.stringify(newUser)
-                    })
+            try {
+                const response = await fetch('http://localhost:8080/users/register', {
+                    method: 'POST',
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                })
 
-                    const dataUser = response.json();
-                    console.log(dataUser)
-                    message.innerHTML = "Registro enviado!";
+                const dataUser = await response.json();
+                console.log(dataUser)
+                message.innerHTML = "Registro enviado!";
 
-                    setTimeout(() => {
-                        window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/home.html";
-                    }, 2000);
-                } catch (error) {
-                    message.innerHTML('Erro de conexão! ' + error);
-                }
+                setTimeout(() => {
+                    window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/home.html";
+                }, 2000);
 
+            } catch (error) {
+                message.innerHTML('Erro de conexão! ' + error);
             }
         }
-
-    }
-    registerUser();
+    } registerUser();
 });
 
 function msgError() {
@@ -59,5 +61,25 @@ function msgError() {
         return message.innerHTML = "Campo email vazio!"
     } else if (document.getElementById("senhaUser").value == "" || document.getElementById("confSenhaUser").value == "") {
         return message.innerHTML = "Campos de senha vazio!"
-    } 
+    }
 }
+
+async function verifyEmail(emailUser) {
+    try {
+        const response = await fetch(`http://localhost:8080/users/verifyEmail?emailUser=${encodeURIComponent(emailUser)}`, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            console.error("erro response")
+            return false;
+        }
+        const data = await response.json()
+        return !!data?.existe;
+
+    } catch (e) {
+        console.log(e)
+    }
+} 
