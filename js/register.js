@@ -21,8 +21,9 @@ form.addEventListener('submit', async function (event) {
                 emailUser: emailUser,
                 senhaUser: senhaUser
             }
-            if (mensagemErro()) {
-                mensagemErro()
+
+            if (msgError()) {
+                return msgError()
             } else {
                 try {
                     const response = await fetch('http://localhost:8080/users/register', {
@@ -38,7 +39,7 @@ form.addEventListener('submit', async function (event) {
                     message.innerHTML = "Registro enviado!";
 
                     setTimeout(() => {
-                        window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/BloomsKimonoWeb/home.html";
+                        window.location.href = "http://127.0.0.1:5500/BloomsKimonoWeb/home.html";
                     }, 2000);
                 } catch (error) {
                     message.innerHTML('Erro de conexão! ' + error);
@@ -51,8 +52,12 @@ form.addEventListener('submit', async function (event) {
     registerUser();
 });
 
-function mensagemErro() {
-    if (nomeUser || emailUser || senhaUser == "") {
-        return message.innerHTML = "Ocorreu um erro! Preencha todos os campos!"
-    }
+function msgError() {
+    if (document.getElementById("nomeUser").value == "") {
+        return message.innerHTML = "Campo nome vazio!"
+    } else if (document.getElementById("emailUser").value == "") {
+        return message.innerHTML = "Campo email vazio!"
+    } else if (document.getElementById("senhaUser").value == "" || document.getElementById("confSenhaUser").value == "") {
+        return message.innerHTML = "Campos de senha vazio!"
+    } 
 }

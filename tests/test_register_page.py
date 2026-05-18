@@ -11,7 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def chrome():
     service = Service(ChromeDriverManager().install())
     chrome = webdriver.Chrome(service=service)
-    chrome.get("http://127.0.0.1:5500/BloomsKimonoWeb/BloomsKimonoWeb/register.html")
+    chrome.get("http://127.0.0.1:5500/BloomsKimonoWeb/register.html")
     chrome.implicitly_wait(5)
     chrome.maximize_window()
 
@@ -44,9 +44,8 @@ def test_inserting_itens_in_elements_and_checking_message(chrome):
 def test_clicking_in_login_page(chrome):
     chrome.find_element(By.ID, "loginButton").click()
     WebDriverWait(chrome, 20).until(
-        EC.url_to_be("http://127.0.0.1:5500/BloomsKimonoWeb/BloomsKimonoWeb/login.html")
+        EC.url_to_be("http://127.0.0.1:5500/BloomsKimonoWeb/login.html")
     )
-
 
 @pytest.mark.usefixtures("chrome")
 def test_inserting_itens_and_redirect(chrome):
@@ -62,7 +61,7 @@ def test_inserting_itens_and_redirect(chrome):
     assert message.text == 'Registro enviado!'
 
     WebDriverWait(chrome, 5).until(
-        EC.url_to_be("http://127.0.0.1:5500/BloomsKimonoWeb/BloomsKimonoWeb/home.html")
+        EC.url_to_be("http://127.0.0.1:5500/BloomsKimonoWeb/home.html")
     )
 
 @pytest.mark.usefixtures("chrome")
@@ -76,4 +75,38 @@ def test_not_insert_same_password(chrome):
 
     message = chrome.find_element(By.ID, "message")
     assert message.text == "As senhas nao coincidem!"
+
+
+@pytest.mark.usefixtures("chrome")
+def test_field_name_null(chrome):
+    chrome.find_element(By.ID, "emailUser").send_keys("emailForTest@gmail.com")
+    chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
+    chrome.find_element(By.ID, "confSenhaUser").send_keys("passForTest")
+
+    chrome.find_element(By.ID, "btnRegister").click()
+
+    message = chrome.find_element(By.ID, "message")
+    assert message.text == "Campo nome vazio!"
+
+@pytest.mark.usefixtures("chrome")
+def test_field_email_null(chrome):
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTest")
+    chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
+    chrome.find_element(By.ID, "confSenhaUser").send_keys("passForTest")
+
+    chrome.find_element(By.ID, "btnRegister").click()
+
+    message = chrome.find_element(By.ID, "message")
+    assert message.text == "Campo email vazio!"
+
+@pytest.mark.usefixtures("chrome")
+def test_field_password_null(chrome):
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTest")
+    chrome.find_element(By.ID, "emailUser").send_keys("emailForTest@gmail.com")
+
+    chrome.find_element(By.ID, "btnRegister").click()
+
+    message = chrome.find_element(By.ID, "message")
+    assert message.text == "Campos de senha vazio!"
+
 
