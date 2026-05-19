@@ -7,6 +7,8 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+
 @pytest.fixture
 def chrome():
     service = Service(ChromeDriverManager().install())
@@ -18,19 +20,20 @@ def chrome():
     yield chrome
     chrome.quit()
 
+
 @pytest.mark.usefixtures("chrome")
 def test_register_elements_displayed(chrome):
-
     chrome.find_element(By.ID, "nomeUser").is_displayed()
     chrome.find_element(By.ID, "emailUser").is_displayed()
     chrome.find_element(By.ID, "senhaUser").is_displayed()
     chrome.find_element(By.ID, "confSenhaUser").is_displayed()
     chrome.find_element(By.ID, "btnRegister").is_displayed()
 
+
 @pytest.mark.usefixtures("chrome")
 def test_inserting_itens_in_elements_and_checking_message(chrome):
-    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTest")
-    chrome.find_element(By.ID, "emailUser").send_keys("emailForTest@gmail.com")
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTesting")
+    chrome.find_element(By.ID, "emailUser").send_keys("emailForTesting1@gmail.com")
     chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
     chrome.find_element(By.ID, "confSenhaUser").send_keys("passForTest")
     chrome.find_element(By.ID, "btnRegister").click()
@@ -40,6 +43,7 @@ def test_inserting_itens_in_elements_and_checking_message(chrome):
     message = chrome.find_element(By.ID, "message")
     assert message.text == 'Registro enviado!'
 
+
 @pytest.mark.usefixtures("chrome")
 def test_clicking_in_login_page(chrome):
     chrome.find_element(By.ID, "loginButton").click()
@@ -47,10 +51,11 @@ def test_clicking_in_login_page(chrome):
         EC.url_to_be("http://127.0.0.1:5500/BloomsKimonoWeb/login.html")
     )
 
+
 @pytest.mark.usefixtures("chrome")
 def test_inserting_itens_and_redirect(chrome):
-    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTest")
-    chrome.find_element(By.ID, "emailUser").send_keys("emailForTest@gmail.com")
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTesting")
+    chrome.find_element(By.ID, "emailUser").send_keys("emailForTesting11@gmail.com")
     chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
     chrome.find_element(By.ID, "confSenhaUser").send_keys("passForTest")
     chrome.find_element(By.ID, "btnRegister").click()
@@ -64,10 +69,11 @@ def test_inserting_itens_and_redirect(chrome):
         EC.url_to_be("http://127.0.0.1:5500/BloomsKimonoWeb/home.html")
     )
 
+
 @pytest.mark.usefixtures("chrome")
 def test_not_insert_same_password(chrome):
-    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTest")
-    chrome.find_element(By.ID, "emailUser").send_keys("emailForTest@gmail.com")
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTesting")
+    chrome.find_element(By.ID, "emailUser").send_keys("emailForTesting@gmail.com")
     chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
     chrome.find_element(By.ID, "confSenhaUser").send_keys("wrongPassForTest")
 
@@ -79,7 +85,7 @@ def test_not_insert_same_password(chrome):
 
 @pytest.mark.usefixtures("chrome")
 def test_field_name_null(chrome):
-    chrome.find_element(By.ID, "emailUser").send_keys("emailForTest@gmail.com")
+    chrome.find_element(By.ID, "emailUser").send_keys("emailForTesting@gmail.com")
     chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
     chrome.find_element(By.ID, "confSenhaUser").send_keys("passForTest")
 
@@ -88,9 +94,10 @@ def test_field_name_null(chrome):
     message = chrome.find_element(By.ID, "message")
     assert message.text == "Campo nome vazio!"
 
+
 @pytest.mark.usefixtures("chrome")
 def test_field_email_null(chrome):
-    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTest")
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTesting")
     chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
     chrome.find_element(By.ID, "confSenhaUser").send_keys("passForTest")
 
@@ -99,14 +106,28 @@ def test_field_email_null(chrome):
     message = chrome.find_element(By.ID, "message")
     assert message.text == "Campo email vazio!"
 
+
 @pytest.mark.usefixtures("chrome")
 def test_field_password_null(chrome):
-    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTest")
-    chrome.find_element(By.ID, "emailUser").send_keys("emailForTest@gmail.com")
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTesting")
+    chrome.find_element(By.ID, "emailUser").send_keys("emailForTesting@gmail.com")
 
     chrome.find_element(By.ID, "btnRegister").click()
 
     message = chrome.find_element(By.ID, "message")
     assert message.text == "Campos de senha vazio!"
 
+
+@pytest.mark.usefixtures("chrome")
+def test_insert_exists_email(chrome):
+    chrome.find_element(By.ID, "nomeUser").send_keys("userNameForTesting")
+    chrome.find_element(By.ID, "emailUser").send_keys("aaa@gmail.com")
+    chrome.find_element(By.ID, "senhaUser").send_keys("passForTest")
+    chrome.find_element(By.ID, "confSenhaUser").send_keys("passForTest")
+
+    chrome.find_element(By.ID, "btnRegister").click()
+
+    WebDriverWait(chrome, 5).until(
+        EC.text_to_be_present_in_element((By.ID, "message"), "Este email ja está sendo utilizado!")
+    )
 

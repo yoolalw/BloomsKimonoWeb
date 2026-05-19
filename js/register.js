@@ -21,7 +21,7 @@ form.addEventListener('submit', async function (event) {
             const isEmailTaken = await verifyEmail(emailUser)
 
             if (isEmailTaken) {
-                message.innerHTML = "email ja usado"
+                message.innerHTML = "Este email ja está sendo utilizado!"
                 return
             }
             const newUser = {
@@ -48,10 +48,10 @@ form.addEventListener('submit', async function (event) {
                 }, 2000);
 
             } catch (error) {
-                message.innerHTML('Erro de conexão! ' + error);
+                message.innerHTML = 'Erro de conexão! ' + error;
             }
         }
-    } registerUser();
+    }
 });
 
 function msgError() {
@@ -69,17 +69,19 @@ async function verifyEmail(emailUser) {
         const response = await fetch(`http://localhost:8080/users/verifyEmail?emailUser=${encodeURIComponent(emailUser)}`, {
             method: 'GET',
             headers: {
-                'Content-type': 'application/json'
+                'Accept': 'application/json'
             }
         });
+
         if (!response.ok) {
-            console.error("erro response")
+            console.error("erro response");
             return false;
         }
-        const data = await response.json()
-        return !!data?.existe;
 
+        const data = await response.json();
+        return !!data?.existe;
     } catch (e) {
-        console.log(e)
+        console.error(e);
+        return false;
     }
-} 
+}
