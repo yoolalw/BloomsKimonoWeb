@@ -30,14 +30,14 @@ loginForm.addEventListener('submit', (e) => {
             if (!response.ok) {
                 console.log('login nao efetuado')
                 message.textContent = "Nome ou senha inválidos."
-                return;
-            }
+                return
+            } 
 
             console.log(response.status)
             message.textContent = "Login efetuado com sucesso!"
             setTimeout(() => {
                 window.location.href = "home.html"
-            }, 1500)
+            }, 2000)
 
         } catch (e) {
             throw new Error(e)
