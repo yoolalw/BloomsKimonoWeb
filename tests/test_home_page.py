@@ -11,6 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from urllib.parse import urlparse, parse_qs
 
+
 class TestHomePage:
     chrome: WebDriver
 
@@ -25,12 +26,14 @@ class TestHomePage:
 
     def test_click_in_prodsess(self):
         self.chrome.find_element(By.CLASS_NAME, "prodSessInn").click()
+
         url = self.chrome.current_url
         parsedUrl = urlparse(url)
         queryParams = parse_qs(parsedUrl.query)
-
         idExtr = queryParams.get('id', [None])[0]
 
         time.sleep(3)
 
         print(f'idExtr: {idExtr}')
+
+        self.chrome.get("http://127.0.0.1:5500/BloomsKimonoWeb/home.html")

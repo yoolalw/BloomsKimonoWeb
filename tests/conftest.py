@@ -15,3 +15,4 @@ def chrome(request):
 
     yield chrome
     chrome.quit()
+

@@ -1,8 +1,6 @@
 const message = document.getElementById('message')
 const loginForm = document.getElementById('loginForm')
 
-
-
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
     
