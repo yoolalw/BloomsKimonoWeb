@@ -1,5 +1,6 @@
 from operator import and_
 
+import allure
 import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
@@ -30,6 +31,7 @@ class RegisterUserPage:
             self.wait.until(ec.visibility_of_element_located(self.input_password)).is_displayed() and \
             self.wait.until(ec.visibility_of_element_located(self.confirm_password)).is_displayed()
 
+    @allure.step("Inserindo com o usuario: {text1}")
     def inserting_items_in_fields(self, text1, text2, text3, text4):
         self.wait.until(ec.visibility_of_element_located(self.input_user_name)).send_keys(text1)
         self.wait.until(ec.visibility_of_element_located(self.input_email)).send_keys(text2)
