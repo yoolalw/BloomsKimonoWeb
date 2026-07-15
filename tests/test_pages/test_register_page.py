@@ -21,8 +21,11 @@ class TestRegisterPage:
 
     @allure.title("Veriying if elements in DOM has been created")
     @allure.description("This test has been created to see if every elements are in screen")
+    @allure.tag("a", "b", "c")
+    @allure.link("http://localhost:8080/users", name="api")
     @allure.severity(Severity.NORMAL)
     @allure.step("S1")
+    @allure.issue("wth is this")
     def test_if_elements_has_been_displayeds_in_screen(self):
         assert self.register_page.displayed_items_in_screen()
 
@@ -37,8 +40,9 @@ class TestRegisterPage:
     )
     @allure.title("Triying to insert every items in register page! ")
     @allure.severity(Severity.CRITICAL)
-    @allure.step("S2")
     def test_inserting_items_in_fields(self, user, email, password, con_password, expected):
-        self.register_page.inserting_items_in_fields(text1=user, text2=email, text3=password, text4=con_password)
+        with allure.step("231"):
+            self.register_page.inserting_items_in_fields(text1=user, text2=email, text3=password, text4=con_password)
         self.register_page.submit_click()
+
         assert self.register_page.see_message() == expected
