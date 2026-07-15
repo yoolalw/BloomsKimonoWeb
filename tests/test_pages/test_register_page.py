@@ -8,41 +8,30 @@ from tests.conftest import driver
 from tests.pages.page_register_user import RegisterUserPage
 
 
+@allure.title("Testes na pagina de cadastro de usuário")
+@allure.description(
+    "Os testes verificarão se os retornos esperados da interface seja condizente com o fluxo natural de um e-commerce.")
 @pytest.mark.usefixtures("driver")
-@allure.title("Tests in register user page")
 class TestRegisterPage:
     driver = WebDriver
     wait = WebDriverWait
 
-
     def setup_method(self, driver):
-        self.driver.get("http://127.0.0.1:5500/register.html")
         self.register_page = RegisterUserPage(self.driver)
+        self.driver.get('http://127.0.0.1:5500/register.html')
 
-    @allure.title("Veriying if elements in DOM has been created")
-    @allure.description("This test has been created to see if every elements are in screen")
-    @allure.tag("a", "b", "c")
-    @allure.link("http://localhost:8080/users", name="api")
-    @allure.severity(Severity.NORMAL)
-    @allure.step("S1")
-    @allure.issue("wth is this")
-    def test_if_elements_has_been_displayeds_in_screen(self):
+    def test_verificando_existencia_de_elementos_na_tela(self):
         assert self.register_page.displayed_items_in_screen()
 
     @pytest.mark.parametrize(
-        "user, email, password, con_password, expected",
+        "user, email, password, conf_password, expected",
         [
-            ("user1", "email1@email", "password", "password", "Registro enviado!"),
-            ("user2", "email2@email", "password", "passwordwrong", "As senhas nao coincidem!"),
-            ("user3", "emailexistente@gmail.com", "password", "password", "Este email ja está sendo utilizado!")
+            ("a", "a@email.com", "ab123", "ab123", "Registro enviado!"),
+            ("b", "b@email.com", "b123", "ba123", "As senhas nao coincidem!"),
+            ("c", "c@email.com", "ab123", "ab123", "Este email ja foi registrado!"),
         ]
-
     )
-    @allure.title("Triying to insert every items in register page! ")
-    @allure.severity(Severity.CRITICAL)
-    def test_inserting_items_in_fields(self, user, email, password, con_password, expected):
-        with allure.step("231"):
-            self.register_page.inserting_items_in_fields(text1=user, text2=email, text3=password, text4=con_password)
+    def test_inserindo_itens_no_campo_de_inserção(self, user, email, password, conf_password, expected):
+        self.register_page.inserting_items_in_fields(user, email, password, conf_password)
         self.register_page.submit_click()
-
         assert self.register_page.see_message() == expected
