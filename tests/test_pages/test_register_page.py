@@ -3,7 +3,7 @@ from asyncio import wait
 from pytest_check import check
 import allure
 import pytest
-from allure_commons.types import Severity
+from allure_commons.types import Severity, ALLURE_UNIQUE_LABELS
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
@@ -27,6 +27,8 @@ class TestRegisterPage:
         self.register_page = RegisterUserPage(self.driver)
         self.driver.get('http://127.0.0.1:5500/register.html')
 
+    @allure.sub_suite("Verificação de elementos no DOM")
+    @allure.title("Verificando se os elementos estao na tela")
     def test_verificando_existencia_de_elementos_na_tela(self):
         assert self.register_page.displayed_items_in_screen()
 
@@ -35,12 +37,12 @@ class TestRegisterPage:
     @pytest.mark.parametrize(
         "user, email, password, conf_password, expected",
         [
-            # ("a", "a@email.com", "ab123", "ab123", "Registro enviado!"),
-            # ("b", "b@email.com", "b123", "ba123", "As senhas nao coincidem!"),
-            # ("c", "c@email.com", "ab123", "ab123", "Este email ja está sendo utilizado!"),
-            # ("", "d@email.com", "123", "123", "Campo nome vazio!"),
-            # ("e", "", "123", "123", "Campo email vazio!"),
-            # ("f", "email@email.com", "", "", "Campos de senha vazio!"),
+            ("a", "a@email.com", "ab123", "ab123", "Registro enviado!"),
+            ("b", "b@email.com", "b123", "ba123", "As senhas nao coincidem!"),
+            ("c", "c@email.com", "ab123", "ab123", "Este email ja está sendo utilizado!"),
+            ("", "d@email.com", "123", "123", "Campo nome vazio!"),
+            ("e", "", "123", "123", "Campo email vazio!"),
+            ("f", "email@email.com", "", "", "Campos de senha vazio!"),
             ("g", "email", "123", "123", 'Inclua um "@" no endereço de e-mail. "email" está com um "@" faltando.')
         ]
     )
@@ -49,12 +51,8 @@ class TestRegisterPage:
         self.register_page.submit_click()
         assert self.register_page.see_message() == expected
 
+    @allure.sub_suite("Redirecionamento de pagina")
+    @allure.title("Clicando no link de redirecionamento para página de login")
     def test_clicando_no_link_de_redirecionamento(self):
         self.register_page.login_button_click()
-
-    def test_email_val(self):
-        self.register_page.inserting_items_in_fields("a", "a", "123", "123")
-        self.register_page.submit_click()
-        time.sleep(5)
-        email = self.driver.find_element(By.ID, "emailUser")
-        print(email.get_attribute("validationMessage"))
+        assert self.register_page.see_url_login_page()
