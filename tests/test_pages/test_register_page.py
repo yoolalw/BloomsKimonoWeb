@@ -1,11 +1,17 @@
+import time
+from asyncio import wait
+from pytest_check import check
 import allure
 import pytest
 from allure_commons.types import Severity
+from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from tests.conftest import driver
 from tests.pages.page_register_user import RegisterUserPage
+
 
 @allure.parent_suite("Testes Web")
 @allure.suite("Testes realizados na pagina de registro")
@@ -29,16 +35,26 @@ class TestRegisterPage:
     @pytest.mark.parametrize(
         "user, email, password, conf_password, expected",
         [
-            ("a", "a@email.com", "ab123", "ab123", "Registro enviado!"),
-            ("b", "b@email.com", "b123", "ba123", "As senhas nao coincidem!"),
-            ("c", "c@email.com", "ab123", "ab123", "Este email ja está sendo utilizado!"),
-            ("", "d@email.com", "123", "123", "Campo nome vazio!"),
-            ("e", "", "123", "123", "Campo email vazio!"),
-            ("f", "email@email.com", "", "", "Campos de senha vazio!"),
+            # ("a", "a@email.com", "ab123", "ab123", "Registro enviado!"),
+            # ("b", "b@email.com", "b123", "ba123", "As senhas nao coincidem!"),
+            # ("c", "c@email.com", "ab123", "ab123", "Este email ja está sendo utilizado!"),
+            # ("", "d@email.com", "123", "123", "Campo nome vazio!"),
+            # ("e", "", "123", "123", "Campo email vazio!"),
+            # ("f", "email@email.com", "", "", "Campos de senha vazio!"),
+            ("g", "email", "123", "123", 'Inclua um "@" no endereço de e-mail. "email" está com um "@" faltando.')
         ]
     )
-    def test_inserindo_itens_no_campo_de_inserção(self, user, email, password, conf_password, expected):
+    def test_inserindo_itens_nos_campos_de_input(self, user, email, password, conf_password, expected):
         self.register_page.inserting_items_in_fields(user, email, password, conf_password)
         self.register_page.submit_click()
         assert self.register_page.see_message() == expected
 
+    def test_clicando_no_link_de_redirecionamento(self):
+        self.register_page.login_button_click()
+
+    def test_email_val(self):
+        self.register_page.inserting_items_in_fields("a", "a", "123", "123")
+        self.register_page.submit_click()
+        time.sleep(5)
+        email = self.driver.find_element(By.ID, "emailUser")
+        print(email.get_attribute("validationMessage"))

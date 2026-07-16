@@ -44,8 +44,18 @@ class RegisterUserPage:
 
     @allure.step("Verificando retorno de mensagem para usuário")
     def see_message(self):
-        return self.wait.until(ec.visibility_of_element_located(self.message)).text
+        email = self.wait.until(ec.visibility_of_element_located(self.input_email)).get_attribute("validationMessage")
+        print(email)
+        if email:
+            return email
+        else:
+            return self.wait.until(ec.visibility_of_element_located(self.message)).text
 
     @allure.step("Clicando no botão de redirecionamento para pagina de login")
     def login_button_click(self):
         self.wait.until(ec.visibility_of_element_located(self.login_redirect_button)).click()
+
+    @allure.step("Verificação de redirecionamento de url")
+    def see_url_login_page(self):
+        return self.wait.until(ec.url_to_be('http://127.0.0.1:5500/login.html'))
+
