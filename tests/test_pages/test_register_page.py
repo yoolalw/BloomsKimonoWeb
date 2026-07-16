@@ -51,6 +51,13 @@ class TestRegisterPage:
         self.register_page.submit_click()
         assert self.register_page.see_message() == expected
 
+    @allure.title("Verificando redirecionamento para página home")
+    @allure.sub_suite("Redirecionamento de página")
+    def test_verificando_redirecionamento_de_página(self):
+        self.register_page.inserting_items_in_fields("user123", "email@gmail.com", "1234", "1234")
+        self.register_page.submit_click()
+        assert self.wait.until(expected_conditions.url_to_be("http://127.0.0.1:5500/home.html"))
+
     @allure.sub_suite("Redirecionamento de pagina")
     @allure.title("Clicando no link de redirecionamento para página de login")
     def test_clicando_no_link_de_redirecionamento(self):
