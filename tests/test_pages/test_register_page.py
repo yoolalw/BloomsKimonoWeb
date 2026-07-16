@@ -32,6 +32,9 @@ class TestRegisterPage:
             ("a", "a@email.com", "ab123", "ab123", "Registro enviado!"),
             ("b", "b@email.com", "b123", "ba123", "As senhas nao coincidem!"),
             ("c", "c@email.com", "ab123", "ab123", "Este email ja está sendo utilizado!"),
+            ("", "d@email.com", "123", "123", "Campo nome vazio!"),
+            ("e", "", "123", "123", "Campo email vazio!"),
+            ("f", "email@email.com", "", "", "Campos de senha vazio!"),
         ]
     )
     def test_inserindo_itens_no_campo_de_inserção(self, user, email, password, conf_password, expected):
