@@ -32,10 +32,8 @@ class HomePage:
         return self.wait.until(expected_conditions.visibility_of_element_located(self.card_img)) and \
             self.wait.until(expected_conditions.visibility_of_element_located(self.card_title)) and \
             self.wait.until(expected_conditions.visibility_of_element_located(self.card_price)) and \
-            self.wait.until(expected_conditions.visibility_of_element_located(self.delete_button)) and \
-            self.wait.until(
-                lambda _: self.driver.find_element()
-            )
+            self.wait.until(expected_conditions.visibility_of_element_located(self.delete_button))  and \
+            self.wait.until(expected_conditions.visibility_of_element_located(self.edit_button))
 
     @allure.step("Clicando no botao de deletar produto")
     def click_deletar_produto(self):
@@ -57,12 +55,18 @@ class HomePage:
         self.click_card()
         parse_url = urlparse(self.driver.current_url)
         id_url = int(parse_qs(parse_url.query).get('id', [None])[0])
-
         return valor_id_final == id_url
 
     @allure.step("Verificando redirecionamento para tela de editar produto")
     def redirect_editar_page(self):
-        self.wait.until(expected_conditions.url_to_be('http://127.0.0.1:5500/updateProduct.html?id=1002'))
+        card = self.wait.until(expected_conditions.visibility_of_element_located(self.card))
+        id = card.get_attribute('id')
+        id_final = int(re.search(r"\d+", id).group())
+        self.click_editar_produto()
+        url = urlparse(self.driver.current_url)
+        id_url = int(parse_qs(url.query).get('id', [None])[0])
+
+        return id_url == id_final
 
     @allure.step("Verificando se o produto foi deletado")
     def verificando_se_o_item_foi_removido(self):

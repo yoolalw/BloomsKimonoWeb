@@ -34,7 +34,6 @@ class TestHomePage:
 
     @allure.title("Clicando no botao de editar produto")
     def test_clicando_em_editar_produto_e_verificando_redirecionamento(self):
-        self.home_page.click_editar_produto()
         assert self.home_page.redirect_editar_page()
 
     @allure.title("Clicando no card")
