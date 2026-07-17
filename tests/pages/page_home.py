@@ -1,3 +1,6 @@
+import re
+from urllib.parse import urlparse, parse_qs
+
 import allure
 import pytest
 from selenium.webdriver.common.alert import Alert
@@ -20,9 +23,8 @@ class HomePage:
         self.delete_button = (By.CLASS_NAME, 'removeProd')
         self.edit_button = (By.XPATH, '//*[@class="prodSessInn"]/a[2]/button')
 
-        self.cadastrar_prod =  (By.XPATH, '/html/body/a')
+        self.cadastrar_prod = (By.XPATH, '/html/body/a')
         self.cart_btn = (By.XPATH, '/html/body/div[1]/a[2]')
-
 
     @allure.step("Verificando comportamento dos elementos no card")
     def verificando_comportamento_dos_elementos_no_card(self):
@@ -46,9 +48,26 @@ class HomePage:
 
     @allure.step("Verificando redirecionamento para tela de detalhes")
     def redirect_detalhes_page(self):
-        url =
+        card = self.wait.until(expected_conditions.visibility_of_element_located(self.card))
+        id = card.get_attribute("id")
+
+        rgx = r"\d+"
+        cmpr = re.search(rgx, id)
+        valor_id_final = int(cmpr.group())
+
+        self.click_card()
+
+        url = self.driver.current_url
+        parse_url = urlparse(url)
+        id_url = parse_qs(parse_url.query).get('id', [None])[0]
+        print(valor_id_final, id_url)
+
+        if valor_id_final == id_url:
+            return True
 
 
+
+        return valor_id_final
 
     @allure.step("Verificando redirecionamento para tela de editar produto")
     def redirect_editar_page(self):

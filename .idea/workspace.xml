@@ -88,24 +88,6 @@
   }
 }</component>
   <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes">
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_cadastro_de_ProDOS" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
@@ -178,13 +160,49 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_cadastro_de_produtos" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_cadastro_de_ProDOS" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho" />
       </list>
     </recent_temporary>
   </component>
