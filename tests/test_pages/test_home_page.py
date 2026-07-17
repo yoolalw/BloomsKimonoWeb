@@ -40,7 +40,9 @@ class TestHomePage:
     @allure.title("Clicando no card")
     def test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes(self):
         self.home_page.click_card()
-        assert self.home_page.redirect_detalhes_page()
+        self.home_page.redirect_detalhes_page()
+        url = self.wait.until(expected_conditions.url_contains('id=1067'))
+        assert url
 
     @allure.title("Clicando no botao de cadastro de produtos")
     def test_clicando_no_botao_de_cadastro_de_produtos(self):

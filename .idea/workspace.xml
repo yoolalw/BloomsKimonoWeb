@@ -87,7 +87,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho">
+  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes">
     <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
@@ -180,10 +180,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_cadastro_de_produtos" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_cadastro_de_ProDOS" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento" />
       </list>
     </recent_temporary>

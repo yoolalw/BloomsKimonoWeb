@@ -46,7 +46,9 @@ class HomePage:
 
     @allure.step("Verificando redirecionamento para tela de detalhes")
     def redirect_detalhes_page(self):
-        self.wait.until(expected_conditions.url_to_be('http://127.0.0.1:5500/detailsProduct.html'))
+        url =
+
+
 
     @allure.step("Verificando redirecionamento para tela de editar produto")
     def redirect_editar_page(self):
