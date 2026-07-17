@@ -5,6 +5,7 @@ import allure
 import pytest
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
 
 from selenium.webdriver.support.wait import WebDriverWait
@@ -13,7 +14,7 @@ from tests.conftest import driver
 
 
 class HomePage:
-    def __init__(self, driver):
+    def __init__(self, driver: WebDriver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
         self.card = (By.XPATH, '//*[@class="prodSessInn"]')
@@ -32,7 +33,9 @@ class HomePage:
             self.wait.until(expected_conditions.visibility_of_element_located(self.card_title)) and \
             self.wait.until(expected_conditions.visibility_of_element_located(self.card_price)) and \
             self.wait.until(expected_conditions.visibility_of_element_located(self.delete_button)) and \
-            self.wait.until(expected_conditions.visibility_of_element_located(self.edit_button))
+            self.wait.until(
+                lambda _: self.driver.find_element()
+            )
 
     @allure.step("Clicando no botao de deletar produto")
     def click_deletar_produto(self):
@@ -50,24 +53,12 @@ class HomePage:
     def redirect_detalhes_page(self):
         card = self.wait.until(expected_conditions.visibility_of_element_located(self.card))
         id = card.get_attribute("id")
-
-        rgx = r"\d+"
-        cmpr = re.search(rgx, id)
-        valor_id_final = int(cmpr.group())
-
+        valor_id_final = int(re.search(r"\d+", id).group())
         self.click_card()
+        parse_url = urlparse(self.driver.current_url)
+        id_url = int(parse_qs(parse_url.query).get('id', [None])[0])
 
-        url = self.driver.current_url
-        parse_url = urlparse(url)
-        id_url = parse_qs(parse_url.query).get('id', [None])[0]
-        print(valor_id_final, id_url)
-
-        if valor_id_final == id_url:
-            return True
-
-
-
-        return valor_id_final
+        return valor_id_final == id_url
 
     @allure.step("Verificando redirecionamento para tela de editar produto")
     def redirect_editar_page(self):
