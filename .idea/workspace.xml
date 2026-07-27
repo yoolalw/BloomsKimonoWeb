@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d6cd06-648e-4935-9328-eeb381b9917d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/img/a9be2d5bd3afe8c88d6704c8b550395f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/img/aa9b33e9a1a479a105a498d0ee6abfc5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/img/azu.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/detailsProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/detailsProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/registerProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/registerProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/pages/page_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/pages/page_register_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_register_product.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,143 +44,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_alert.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_cadastro_de_produtos.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_deletando_produtos_e_verificando_alerta.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_item.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_existencia_dos_elementos_no_card.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_se_os_elementos_estao_na_tela.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_login_page.TestLoginPage.test_fazendo_login_e_verificando_redirecionamento_de_pagina.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_login_page.TestLoginPage.test_inserindo_dados_nos_campos.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_clicando_no_link_de_redirecionamento.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_email_val.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_if_elements_has_been_displayeds_in_screen.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserindo_itens_no_campo_de_insertion.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserindo_itens_no_campo_de_inserção.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserindo_itens_nos_campos_de_input.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserting_items_in_fields.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserting_items_in_fields_and_verifying_error_for_not_the_same_password.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_verificando_redirecionamento_de_página.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_register_page.py.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Blooms/BloomsKimonoWeb/BloomsKimonoWeb&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.maddyhome.idea.vim.ui.VimEmulationConfigurable&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_alert.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_cadastro_de_produtos.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_deletando_produtos_e_verificando_alerta.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_item.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_existencia_dos_elementos_no_card.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_se_os_elementos_estao_na_tela.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_login_page.TestLoginPage.test_fazendo_login_e_verificando_redirecionamento_de_pagina.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_login_page.TestLoginPage.test_inserindo_dados_nos_campos.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_clicando_no_link_de_redirecionamento.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_email_val.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_if_elements_has_been_displayeds_in_screen.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserindo_itens_no_campo_de_insertion.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserindo_itens_no_campo_de_inserção.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserindo_itens_nos_campos_de_input.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserting_items_in_fields.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserting_items_in_fields_and_verifying_error_for_not_the_same_password.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_verificando_redirecionamento_de_página.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field.executor": "Run",
+    "Python tests.pytest in test_register_page.py.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Blooms/BloomsKimonoWeb/BloomsKimonoWeb/tests/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_existencia_dos_elementos_no_card">
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_botao_de_ver_carrinho&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Blooms\BloomsKimonoWeb\BloomsKimonoWeb\tests\img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field">
     <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
@@ -254,13 +172,85 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_existencia_dos_elementos_no_card" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" />
       </list>
     </recent_temporary>
   </component>

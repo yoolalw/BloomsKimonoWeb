@@ -42,3 +42,10 @@ class LoginPage:
         if email or senha:
             return email or senha
         return self.wait.until(ec.visibility_of_element_located(self.message)).text
+
+    def login_auto(self):
+        self.driver.get('http://127.0.0.1:5500/login.html')
+        self.wait.until(ec.visibility_of_element_located(self.input_email)).send_keys("fulano@email.com")
+        self.wait.until(ec.visibility_of_element_located(self.input_password)).send_keys("123")
+        self.wait.until(ec.visibility_of_element_located(self.submit_button)).click()
+        self.submit_click()
