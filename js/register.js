@@ -27,7 +27,8 @@ form.addEventListener('submit', async function (event) {
             const newUser = {
                 nomeUser: nomeUser,
                 emailUser: emailUser,
-                senhaUser: senhaUser
+                senhaUser: senhaUser,
+                role: "USER"
             }
 
             try {

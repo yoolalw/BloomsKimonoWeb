@@ -1,10 +1,17 @@
 const urlToFetch = "http://localhost:8080/products"
 const produto = document.getElementById("produto")
 const message = document.getElementById("message")
-
+const token = localStorage.getItem("token")
+console.log(token)
 async function getProductsFromDb() {
     try {
-        const response = await fetch(urlToFetch)
+        const response = await fetch("http://localhost:8080/products", {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            }
+        }
+        )
         console.log(response.status)
 
         if (response.ok) {
@@ -42,7 +49,7 @@ async function getProductsFromDb() {
                 const decProd = produto.lastElementChild
                 const removeProd = decProd.querySelector(".removeProd")
                 const upgradePagProd = decProd.querySelector(".updatePagProd")
-                
+
                 // botao de remover produto
                 removeProd.addEventListener("click", async (e) => {
                     e.preventDefault()
@@ -62,14 +69,14 @@ async function getProductsFromDb() {
                             document.getElementById(`prodSessInn-${dataDb.id}`).remove()
 
                         } else {
-                           console.error()
+                            console.error()
                         }
                     } catch (err) {
                         console.log(err)
                     }
                 });
 
-                
+
 
             });
 

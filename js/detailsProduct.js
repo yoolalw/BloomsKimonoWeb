@@ -41,7 +41,7 @@ async function getProdutDetailsById() {
                     }
                     )
                     if (response.ok) {
-                        console.log(response)
+                        console.log(response.body)
                         alert("Item adicionado com sucesso!");
                     } else {
                         alert("Ocorreu um erro ao tentar adicionar o item ao carrinho, tente novamente!");

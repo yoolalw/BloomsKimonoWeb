@@ -3,7 +3,7 @@ const loginForm = document.getElementById('loginForm')
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    
+
     const formData = new FormData(loginForm)
 
     const logData = {
@@ -22,14 +22,17 @@ loginForm.addEventListener('submit', (e) => {
                 },
                 body: JSON.stringify(logData)
             })
-
-            const result = await response.json().catch(()=>({}));
-
             if (!response.ok) {
                 console.log('login nao efetuado')
                 message.textContent = "Nome ou senha inválidos."
                 return
-            } 
+            }
+
+            const data = await response.json()
+            const token = data.token
+            console.log(token)
+
+            localStorage.setItem("token", token)
 
             console.log(response.status)
             message.textContent = "Login efetuado com sucesso!"

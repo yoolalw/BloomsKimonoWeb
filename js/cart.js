@@ -32,13 +32,9 @@ async function getCartItens() {
         console.log(response.status)
 
         if (response.ok) {
-
             const cartItem = await response.json()
-
-            console.log(JSON.stringify(cartItem))
-
+            console.log(cartItem)
             cartItem.forEach((item) => {
-
                 cartContainer.insertAdjacentHTML('beforeend', `
 
                 <div class="containerInn">

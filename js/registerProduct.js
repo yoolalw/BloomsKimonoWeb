@@ -7,6 +7,9 @@ console.log(supabase)
 const form = document.getElementById('registerProductForm');
 const message = document.getElementById('message');
 
+const token = localStorage.getItem("token")
+console.log(token)
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -23,10 +26,11 @@ form.addEventListener('submit', async (e) => {
 
   try {
     const response = await fetch('http://localhost:8080/products/registerProd', {
+      method: 'POST',
       headers: {
+        "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json"
       },
-      method: 'POST',
       body: JSON.stringify(json)
     });
 
