@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e3d6cd06-648e-4935-9328-eeb381b9917d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/detailsProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/detailsProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/paypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paypage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/updateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/updateProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/pages/page_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/pages/page_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_pages/test_home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pages/test_home_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_pages/test_register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pages/test_register_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_pages/test_register_products_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pages/test_register_products_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/pages/page_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_details.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_pages/test_details_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pages/test_details_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +44,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest for tests.test_pages.test_details_page.TestDetailsPage.test_click_add_to_card.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_details_page.TestDetailsPage.test_negative_trying_to_access_without_login.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_details_page.TestDetailsPage.test_redirect_to_ver_cart.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_alert.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_em_editar_produto_e_verificando_redirecionamento.executor": "Run",
@@ -109,8 +104,8 @@
       <recent name="C:\Blooms\BloomsKimonoWeb\BloomsKimonoWeb\tests\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_items_displayed">
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_details_page.TestDetailsPage.test_negative_trying_to_access_without_login">
+    <configuration name="pytest for tests.test_pages.test_details_page.TestDetailsPage.test_click_add_to_card" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,7 +119,43 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_details_page.TestDetailsPage.test_click_add_to_card&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_pages.test_details_page.TestDetailsPage.test_negative_trying_to_access_without_login" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_details_page.TestDetailsPage.test_negative_trying_to_access_without_login&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_pages.test_details_page.TestDetailsPage.test_redirect_to_ver_cart" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="BloomsKimonoWeb" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_details_page.TestDetailsPage.test_redirect_to_ver_cart&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -161,24 +192,6 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_verifying_if_item_has_been_created" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_verifying_if_item_has_been_created&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -218,31 +231,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_product_id_in_url" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_update_product_page.TestUpdateProductPage.test_product_id_in_url&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_details_page.TestDetailsPage.test_negative_trying_to_access_without_login" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_details_page.TestDetailsPage.test_redirect_to_ver_cart" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_details_page.TestDetailsPage.test_click_add_to_card" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_items_displayed" />
         <item itemvalue="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_inserting_itens_in_field" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_product_id_in_url" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_verifying_if_item_has_been_created" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage" />
       </list>
     </recent_temporary>
   </component>
