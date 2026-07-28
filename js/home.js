@@ -61,6 +61,8 @@ async function getProductsFromDb() {
                         const response = await fetch(`http://localhost:8080/products/${id}`, {
                             method: "DELETE",
                             headers: {
+
+                                "Authorization": `Bearer ${token}`,
                                 "Content-Type": "application/json"
                             }
                         })

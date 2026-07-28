@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d6cd06-648e-4935-9328-eeb381b9917d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/img/a9be2d5bd3afe8c88d6704c8b550395f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/img/aa9b33e9a1a479a105a498d0ee6abfc5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/img/azu.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/detailsProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/detailsProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/paypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paypage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/updateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/updateProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/pages/page_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/pages/page_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/pages/page_register_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pages/page_register_product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_pages/test_home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pages/test_home_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_pages/test_register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pages/test_register_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_pages/test_register_products_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pages/test_register_products_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +74,15 @@
     "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserting_items_in_fields.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_inserting_items_in_fields_and_verifying_error_for_not_the_same_password.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_register_page.TestRegisterPage.test_verificando_redirecionamento_de_página.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items.executor": "Run",
     "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_verifying_if_item_has_been_created.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_inserting_itens_in_field.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_items_displayed.executor": "Run",
+    "Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_product_id_in_url.executor": "Run",
     "Python tests.pytest in test_register_page.py.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -99,8 +109,8 @@
       <recent name="C:\Blooms\BloomsKimonoWeb\BloomsKimonoWeb\tests\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field">
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_items_displayed">
+    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,7 +124,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_clicando_no_card_e_redirection_para_pagina_de_detalhes&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -154,7 +164,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_existencia_dos_elementos_no_card" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_verifying_if_item_has_been_created" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,11 +178,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_home_page.TestHomePage.test_verificando_existencia_dos_elementos_no_card&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_verifying_if_item_has_been_created&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_inserting_itens_in_field" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,11 +196,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_update_product_page.TestUpdateProductPage.test_inserting_itens_in_field&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_items_displayed" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,11 +214,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_update_product_page.TestUpdateProductPage.test_items_displayed&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_product_id_in_url" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="BloomsKimonoWeb" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,35 +232,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="BloomsKimonoWeb" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field&quot;" />
+      <option name="_new_target" value="&quot;tests.test_pages.test_update_product_page.TestUpdateProductPage.test_product_id_in_url&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items_in_field" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_inserting_items" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_img" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_displayeds_inputs" />
-        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage.test_verificando_existencia_dos_elementos_no_card" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_items_displayed" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_inserting_itens_in_field" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_update_product_page.TestUpdateProductPage.test_product_id_in_url" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_register_products_page.TestRegisterProductPage.test_verifying_if_item_has_been_created" />
+        <item itemvalue="Python tests.pytest for tests.test_pages.test_home_page.TestHomePage" />
       </list>
     </recent_temporary>
   </component>

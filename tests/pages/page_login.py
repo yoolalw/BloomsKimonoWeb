@@ -49,3 +49,5 @@ class LoginPage:
         self.wait.until(ec.visibility_of_element_located(self.input_password)).send_keys("123")
         self.wait.until(ec.visibility_of_element_located(self.submit_button)).click()
         self.submit_click()
+        self.wait.until(ec.visibility_of_element_located(self.message))
+

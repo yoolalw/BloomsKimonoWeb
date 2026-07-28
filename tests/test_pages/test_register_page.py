@@ -30,6 +30,7 @@ class TestRegisterPage:
     @allure.sub_suite("Verificação de elementos no DOM")
     @allure.title("Verificando se os elementos estao na tela")
     def test_verificando_existencia_de_elementos_na_tela(self):
+        self.login.login_auto()
         assert self.register_page.displayed_items_in_screen()
 
     @allure.sub_suite("Registro e cadastro (POST)")

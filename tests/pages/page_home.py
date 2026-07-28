@@ -89,3 +89,6 @@ class HomePage:
     @allure.step("Verificando redirecionamento para pagina de ver carrinho")
     def redirect_ver_carrinho(self):
         return self.wait.until(expected_conditions.url_to_be('http://127.0.0.1:5500/cart.html'))
+
+    def click_redirect_cadastro(self):
+        self.wait.until(expected_conditions.visibility_of_element_located(self.cadastrar_prod)).click()

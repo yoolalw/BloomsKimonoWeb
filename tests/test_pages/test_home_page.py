@@ -8,6 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from tests.conftest import driver
 from tests.pages.page_home import HomePage
+from tests.pages.page_login import LoginPage
 
 
 @allure.parent_suite("Teste web")
@@ -22,30 +23,37 @@ class TestHomePage:
     def setup_method(self, driver):
         self.driver.get('http://127.0.0.1:5500/home.html')
         self.home_page = HomePage(self.driver)
+        self.login = LoginPage(self.driver)
 
     @allure.title("Existencia dos elementos no card")
     def test_verificando_existencia_dos_elementos_no_card(self):
+        self.login.login_auto()
         assert self.home_page.verificando_comportamento_dos_elementos_no_card()
 
     @allure.title("Clicando no botao de deletar")
     def test_deletando_produtos_e_verificando_alerta(self):
+        self.login.login_auto()
         self.home_page.click_deletar_produto()
         self.home_page.verificando_se_o_item_foi_removido()
 
     @allure.title("Clicando no botao de editar produto")
     def test_clicando_em_editar_produto_e_verificando_redirecionamento(self):
+        self.login.login_auto()
         assert self.home_page.redirect_editar_page()
 
     @allure.title("Clicando no card")
     def test_clicando_no_card_e_redirecionando_para_pagina_de_detalhes(self):
+        self.login.login_auto()
         assert self.home_page.redirect_detalhes_page()
 
     @allure.title("Clicando no botao de cadastro de produtos")
     def test_clicando_no_botao_de_cadastro_de_produtos(self):
+        self.login.login_auto()
         self.home_page.click_cadastrar_produto()
         assert self.home_page.redirect_cadastro_de_produto
 
     @allure.title("Clicando no botao de ver carrinho")
     def test_clicando_no_botao_de_ver_carrinho(self):
+        self.login.login_auto()
         self.home_page.click_ver_carrinho()
         assert self.home_page.redirect_ver_carrinho()

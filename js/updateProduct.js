@@ -2,7 +2,7 @@ const params = new URLSearchParams(document.location.search)
 const id = params.get("id")
 const message = document.getElementById("message")
 const form = document.getElementById("updateProductForm")
-
+const token = localStorage.getItem('token')
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
@@ -21,7 +21,9 @@ form.addEventListener('submit', async (e) => {
 
             const response = await fetch(`http://localhost:8080/products/${id}`, {
                 method: 'PUT',
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json" },
                 body: JSON.stringify({
                     nomeKimono: editedProdJson.nomeKimono,
                     precoKimono: editedProdJson.precoKimono,

@@ -1,6 +1,6 @@
 const cartContainer = document.querySelector("#cartContainer")
 const message = document.getElementById("message")
-
+const token = localStorage.getItem("token")
 const urlFetchCartItens = 'http://localhost:8080/cart'
 
 console.log(urlFetchCartItens)
@@ -27,7 +27,11 @@ async function getCartItens() {
 
     try {
 
-        const response = await fetch(urlFetchCartItens)
+        const response = await fetch(urlFetchCartItens, {
+            headers:{
+                "Authorization": `Bearer ${token}`
+            }
+        })
 
         console.log(response.status)
 
@@ -119,6 +123,7 @@ async function getCartItens() {
                         const response = await fetch(`http://localhost:8080/cart/${id}`, {
                             method: "DELETE",
                             headers: {
+                                "Authorization": `Bearer ${token}`,
                                 'Content-Type': 'application/json'
                             }
                         })
@@ -171,7 +176,8 @@ async function getCartItens() {
                             method: "PUT",
 
                             headers: {
-                                "Content-Type": "application/json"
+                                "Content-Type": "application/json",
+                                "Authorization": `Bearer ${token}`
                             },
 
                             body: JSON.stringify({
@@ -236,6 +242,8 @@ async function getCartItens() {
                             method: "PUT",
 
                             headers: {
+
+                                "Authorization": `Bearer ${token}`,
                                 "Content-Type": "application/json"
                             },
 

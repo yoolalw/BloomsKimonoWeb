@@ -1,6 +1,6 @@
 const form = document.querySelector("#payForm")
 const message = document.getElementById("message")
-
+const token = localStorage.getItem("token")
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -21,6 +21,7 @@ form.addEventListener('submit', async (e) => {
         async function connectionFetch() {
             const response = await fetch('http://localhost:8080/card-payments', {
                 headers: {
+                    "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
                 method: 'POST',

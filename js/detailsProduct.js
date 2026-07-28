@@ -2,13 +2,17 @@ const params = new URLSearchParams(document.location.search)
 const id = params.get("id")
 const detalhesProduto = document.getElementById("detalhesProduto")
 console.log(id)
-
+const token = localStorage.getItem("token")
 const urlFindByIDToFetch = `http://localhost:8080/products/${id}`
 console.log(urlFindByIDToFetch)
 
 async function getProdutDetailsById() {
     try {
-        const response = await fetch(urlFindByIDToFetch)
+        const response = await fetch(urlFindByIDToFetch,{
+            headers:{
+                "Authorization": `Bearer ${token}`
+            }
+        })
         console.log(response.status)
 
         if (response.ok) {
@@ -36,7 +40,9 @@ async function getProdutDetailsById() {
                 try {
                     const response = await fetch('http://localhost:8080/cart/add', {
                         method: "POST",
-                        headers: { "Content-Type": "application/json" },
+                        headers: { 
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json" },
                         body: JSON.stringify({ id: Number(id), quantidade: 1 })
                     }
                     )
